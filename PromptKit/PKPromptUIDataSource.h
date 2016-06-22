@@ -21,6 +21,7 @@
 + (instancetype)defaultEmptyEntity;
 + (instancetype)defaultErrorEntity;
 
+//default is empty
 - (instancetype)initWithTitle:(NSString *)title;
 - (instancetype)initWithTitle:(NSString *)title emptyLogo:(NSString *)logoName;
 

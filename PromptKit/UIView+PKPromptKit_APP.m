@@ -10,7 +10,6 @@
 #import "PKPromptView.h"
 #import "PKBeansLoadingView.h"
 
-#import "MiaoleGB-swift.h"
 
 @implementation UIView (PKPromptKit)
 
@@ -25,28 +24,11 @@
     
     
 - (void)pk_showLoading{
-    LoadingView *loading ;
-    
-    UIView *view = [self.prompKitContainerView viewWithTag:PKPromptUIStyleLoading];
-    
-    if ([view isKindOfClass:[LoadingView class]]){
-        loading = (LoadingView *)view;
-    }else{
-        loading = [LoadingView maker];
-        loading.tag = PKPromptUIStyleLoading;
-        [self.prompKitContainerView addSubview:loading];
-        loading.center = CGPointMake(self.prompKitContainerView.frame.size.width/2.0, self.prompKitContainerView.frame.size.height/2.0);
-        [loading startAnimating];
-    }
+    [[HUDSinglaton shareSinglaton] showHudWithText:nil andView:self];
 }
     
 - (void)pk_hideLoading{
-    UIView *view = [self.prompKitContainerView viewWithTag:PKPromptUIStyleLoading];
-    
-    if ([view isKindOfClass:[LoadingView class]]){
-        [(LoadingView *)view stopAnimating];
-        [view removeFromSuperview];
-    }
+    [[HUDSinglaton shareSinglaton] hideHudOnView:self];
 }
 
 /*
@@ -147,8 +129,6 @@
 - (void)pk_showToastText:(NSString *)text{
     [[HUDSinglaton shareSinglaton] showHUDThenHideWithText:text andView:self.prompKitContainerView];
 }
-
-
 
 #pragma mark - private
 - (void)_pk_showError:(PKPromptUIDataSource *)errorInfo{

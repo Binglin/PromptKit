@@ -14,7 +14,7 @@
     PKPromptUIDataSource *d = [PKPromptUIDataSource new];
     d.style = PKPromptUIStyleEmpty;
     d.title = @"哎呀，啥都木有!";
-    d.iconName = @"Global_empty_logo";
+    d.iconName = @"PKPromptUIDataSource";
     return d;
 }
 

@@ -30,6 +30,7 @@
 //extenson
 #import "RACSignal+PKPromptKit.h"
 #import "UIViewController+PKPrompKit.h"
+#import "RACSignal+MJRefresh.h"
 
 /**
  *  app中相关的具体界面提示仅需要在PKPromptKit_APP.h中
