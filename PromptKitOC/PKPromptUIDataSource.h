@@ -13,15 +13,24 @@
 
 @property (nonatomic, copy  ) NSString        *title;
 @property (nonatomic, copy  ) NSString        *iconName;
-@property (nonatomic, assign) PKPromptUIStyle    style;
-@property (nonatomic, copy  ) dispatch_block_t   reloadExecution;
-@property (nonatomic, copy  ) NSString        *btnTitle;
+
 @property (nonatomic, copy  ) NSString        *detailTitle;
+
+@property (nonatomic, copy  ) dispatch_block_t reloadExecution;
+@property (nonatomic, copy  ) NSString         *btnTitle;
+
 
 + (instancetype)defaultEmptyEntity;
 + (instancetype)defaultErrorEntity;
 
-- (instancetype)initWithTitle:(NSString *)title;
-- (instancetype)initWithTitle:(NSString *)title emptyLogo:(NSString *)logoName;
+
+- (instancetype)initWithEmptyTitle:(NSString *)title;
+- (instancetype)initWithErrorTitle:(NSString *)title;
+
+
+- (instancetype)initWithTitle:(NSString *)title logo:(NSString *)logoName;
 
 @end
+
+
+

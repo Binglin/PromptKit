@@ -7,6 +7,7 @@
 //
 
 #import "PKPromptView.h"
+#import "PKSetting.h"
 
 @interface PKPromptView ()
 
@@ -17,38 +18,80 @@
 
 @implementation PKPromptView
 
-- (instancetype)initWithFrame:(CGRect)frame entity:(PKPromptUIDataSource *)e{
-    if ([self initWithFrame:frame]) {
-        
+- (instancetype)initWithFrame:(CGRect)frame{
+    if ([super initWithFrame:frame]) {
         [self addSubview:self.centerContainerView];
-        
-        _viewData = e;
-        
-        if (e.title){
-            self.titleLabel.text = e.title;
-            [self.centerContainerView addSubview:self.titleLabel];
-        }
-        if (e.iconName) {
-            self.imageView.image = [UIImage imageNamed:e.iconName];
-            [self.centerContainerView addSubview:self.imageView];
-        }
-        if (e.detailTitle) {
-            self.detailLabel.text = e.detailTitle;
-            [self.centerContainerView addSubview:self.detailLabel];
-        }
-        if (e.btnTitle) {
-            [self.actionBtn setTitle:e.btnTitle forState:UIControlStateNormal];
-            [self.centerContainerView addSubview:self.actionBtn];
-        }
-        
-        if (e.style == PKPromptUIStyleError) {
-            [self addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(errorTaped:)]];
-            
-        }
-        self.backgroundColor = [UIColor colorWithRed:(0xee)/255.0 green:(0xee)/255.0 blue:(0xee)/255.0 alpha:1.0];
-        
     }
     return self;
+}
+
+- (void)updateViewWithEntity:(PKPromptUIDataSource *)e{
+    
+    _viewData = e;
+    
+    if (e.title){
+        self.titleLabel.text = e.title;
+        [self.centerContainerView addSubview:self.titleLabel];
+    }else{
+        [_titleLabel removeFromSuperview];
+    }
+    
+    if (e.iconName) {
+        self.imageView.image = [UIImage imageNamed:e.iconName];
+        [self.centerContainerView addSubview:self.imageView];
+    }else{
+        [_imageView removeFromSuperview];
+    }
+    
+    if (e.detailTitle) {
+        self.detailLabel.text = e.detailTitle;
+        [self.centerContainerView addSubview:self.detailLabel];
+    }else{
+        [_detailLabel removeFromSuperview];
+    }
+    
+    if (e.btnTitle) {
+        [self.actionBtn setTitle:e.btnTitle forState:UIControlStateNormal];
+        [self.actionBtn addTarget:self action:@selector(errorTaped:) forControlEvents:UIControlEventTouchUpInside];
+        [self.centerContainerView addSubview:self.actionBtn];
+    }else{
+        if (e.reloadExecution) {
+            [self addTapToReload];
+        }
+        [_actionBtn removeFromSuperview];
+    }
+    
+    [self setupUIStyle];
+    [self setNeedsLayout];
+}
+
+- (void)setupUIStyle{
+    
+    UILabel  *defaultTitle  = [PKSetting Default].style.titleLabel;
+    UILabel  *defaultDetail = [PKSetting Default].style.detailLabel;
+    UIButton *defaultButton = [PKSetting Default].style.actionBtn;
+    
+    _titleLabel.font        = defaultTitle.font;
+    _titleLabel.textColor   = defaultTitle.textColor;
+    
+    _detailLabel.font       = defaultDetail.font;
+    _detailLabel.textColor  = defaultDetail.textColor;
+    
+    _actionBtn.titleLabel.font = defaultButton.titleLabel.font;
+    
+    [_actionBtn setTitleColor:[defaultButton titleColorForState:UIControlStateNormal] forState:UIControlStateNormal];
+    [_actionBtn setTitleColor:[defaultButton titleColorForState:UIControlStateHighlighted] forState:UIControlStateHighlighted];
+    
+    [_actionBtn setBackgroundImage:[defaultButton backgroundImageForState:UIControlStateNormal] forState:UIControlStateNormal];
+    [_actionBtn setBackgroundImage:[defaultButton backgroundImageForState:UIControlStateHighlighted] forState:UIControlStateHighlighted];
+    
+    [_actionBtn setImage:[defaultButton imageForState:UIControlStateNormal] forState:UIControlStateNormal];
+    [_actionBtn setImage:[defaultButton imageForState:UIControlStateHighlighted] forState:UIControlStateHighlighted];
+}
+
+
+- (void)addTapToReload{
+    [self addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(errorTaped:)]];
 }
 
 - (void)errorTaped:(UITapGestureRecognizer *)tap{
@@ -98,16 +141,9 @@
     }
     
     if (_actionBtn) {
-        CGSize size = [_actionBtn sizeThatFits:CGSizeMake(self.frame.size.width - 30.0f, 100.0)];
-        
-        self.actionBtn.frame = ({ CGRect frame = self.actionBtn.frame;
-            frame.origin.y = containerHeight;
-            frame.size = size ;
-            frame;});
-
-        if (size.width > containerWidth) {
-            containerWidth = size.width;
-        }
+        containerHeight += 20.0;
+        CGSize size = CGSizeMake(self.width - 35 * 2, 44);
+        self.actionBtn.frame = CGRectMake(35, containerHeight, size.width, size.height);
         containerHeight += size.height;
     }
     
@@ -152,10 +188,6 @@
         _titleLabel = [UILabel new];
         _titleLabel.numberOfLines = 0;
         _titleLabel.textAlignment = NSTextAlignmentCenter;
-        _titleLabel.font = [UIFont systemFontOfSize:14.0];
-        
-        //0x807d6c
-        _titleLabel.textColor = [UIColor colorWithRed:(0x80) / 255.0 green:(0x7d)/255.0 blue:(0x6c)/255.0 alpha:1.0];
     }
     return _titleLabel;
 }
@@ -172,8 +204,6 @@
 - (UIButton *)actionBtn{
     if (!_actionBtn) {
         _actionBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-        [_actionBtn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
-        [_actionBtn setTitleColor:[[UIColor blackColor] colorWithAlphaComponent:0.6] forState:UIControlStateHighlighted];
     }
     return _actionBtn;
 }

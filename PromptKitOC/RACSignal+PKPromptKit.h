@@ -28,19 +28,12 @@
 - (RACSignal *)pk_addLoading:(id<PKLoadingViewProtocol> )del;
 
 
-
-/** @Deprecated  通常使用带reload的方法
- *  添加错误显示界面 仅显示错误 没有reload操作
- */
-- (RACSignal *)pk_observerError:(id<PKErrorViewProtocol>)del;
-
-
-
 /**
  *  添加错误显示界面 同时提供一个重新操作原有操作(如请求等)
  *  @param reloadExcution 重新请求时需要进行的操作
  */
-- (RACSignal *)pk_observerError:(id<PKErrorViewProtocol>)del reload:(dispatch_block_t)reloadExcution;
+- (RACSignal *)pk_observerError:(id<PKErrorViewProtocol>)del
+                         reload:(dispatch_block_t)reloadExcution;
 
 
 
@@ -55,10 +48,10 @@
  *  在请求完成如果数据不为空 
  *  则可以自动隐藏空界面的显示
  *
- *  @param del
+ *  @param del  empty delegate
  *  @param data 空提示的文字logo等
  */
 - (RACSignal *)pk_observerEmpty:(id<PKEmptyViewProtocol>)del
-                emptyDataSource:(PKPromptUIDataSource *)data;
+                      emptyData:(PKPromptUIDataSource *)data;
 
 @end

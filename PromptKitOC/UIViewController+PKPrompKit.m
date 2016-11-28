@@ -58,8 +58,4 @@
     [self.prompKitContainerView pk_hideToast];
 }
 
-//- (void)pk_showToast:(NSString *)toastText{
-//    [self.prompKitContainerView pk_showToast:toastText];
-//}
-
 @end
