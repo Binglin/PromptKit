@@ -142,7 +142,7 @@
     
     if (_actionBtn) {
         containerHeight += 20.0;
-        CGSize size = CGSizeMake(self.width - 35 * 2, 44);
+        CGSize size = CGSizeMake(self.frame.size.width - 35 * 2, 44);
         self.actionBtn.frame = CGRectMake(35, containerHeight, size.width, size.height);
         containerHeight += size.height;
     }

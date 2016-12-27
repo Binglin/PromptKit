@@ -7,14 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2C5D39F3AB3F14FAD4784084 /* libPods-PromptKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A37B49CEA8EE92EC3422678 /* libPods-PromptKit.a */; };
+		7145A429FF724C145676B6B5 /* libPods-PromptKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 14F476707BE28402FA44540A /* libPods-PromptKit.a */; };
 		D4230F101DE84195003C139C /* PKSetting.m in Sources */ = {isa = PBXBuildFile; fileRef = D4230F0B1DE84195003C139C /* PKSetting.m */; };
 		D4230F111DE84195003C139C /* RACSignal+MJRefresh.m in Sources */ = {isa = PBXBuildFile; fileRef = D4230F0D1DE84195003C139C /* RACSignal+MJRefresh.m */; };
-		D4230F121DE84195003C139C /* UIScrollView+PKListCounter.m in Sources */ = {isa = PBXBuildFile; fileRef = D4230F0F1DE84195003C139C /* UIScrollView+PKListCounter.m */; };
+		D4230F121DE84195003C139C /* PKListEmptyCounter.m in Sources */ = {isa = PBXBuildFile; fileRef = D4230F0F1DE84195003C139C /* PKListEmptyCounter.m */; };
 		D4230F141DE843E7003C139C /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = D4230F131DE843E7003C139C /* README.md */; };
 		D47703781D532AA4007BF65C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D47703771D532AA4007BF65C /* main.m */; };
 		D477037B1D532AA4007BF65C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D477037A1D532AA4007BF65C /* AppDelegate.m */; };
-		D477037E1D532AA4007BF65C /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D477037D1D532AA4007BF65C /* ViewController.m */; };
+		D477037E1D532AA4007BF65C /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D477037D1D532AA4007BF65C /* RootViewController.m */; };
 		D47703811D532AA4007BF65C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D477037F1D532AA4007BF65C /* Main.storyboard */; };
 		D47703831D532AA4007BF65C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D47703821D532AA4007BF65C /* Assets.xcassets */; };
 		D47703861D532AA4007BF65C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D47703841D532AA4007BF65C /* LaunchScreen.storyboard */; };
@@ -25,6 +25,10 @@
 		D47703AD1D532AB6007BF65C /* RACSignal+PKPromptKit.m in Sources */ = {isa = PBXBuildFile; fileRef = D47703A51D532AB6007BF65C /* RACSignal+PKPromptKit.m */; };
 		D47703AE1D532AB6007BF65C /* UIView+PKPromptKit_APP.m in Sources */ = {isa = PBXBuildFile; fileRef = D47703A71D532AB6007BF65C /* UIView+PKPromptKit_APP.m */; };
 		D47703AF1D532AB6007BF65C /* UIViewController+PKPrompKit.m in Sources */ = {isa = PBXBuildFile; fileRef = D47703A91D532AB6007BF65C /* UIViewController+PKPrompKit.m */; };
+		D4A6CF6A1E121A580043371C /* ExampleViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D4A6CF681E121A580043371C /* ExampleViewModel.m */; };
+		D4D32B8E1E125063006095D5 /* AFHTTPSessionManager+RACSignal.m in Sources */ = {isa = PBXBuildFile; fileRef = D4D32B8B1E125063006095D5 /* AFHTTPSessionManager+RACSignal.m */; };
+		D4D32B8F1E125063006095D5 /* AFURLSessionManager+RACSignal.m in Sources */ = {isa = PBXBuildFile; fileRef = D4D32B8D1E125063006095D5 /* AFURLSessionManager+RACSignal.m */; };
+		F4ECC67D18A1064530A09BB4 /* libPods-PromptKitTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EDED7BCA231BD3687D8A2148 /* libPods-PromptKitTests.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,20 +42,24 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		4A37B49CEA8EE92EC3422678 /* libPods-PromptKit.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-PromptKit.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		14F476707BE28402FA44540A /* libPods-PromptKit.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-PromptKit.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		2653AC6EA9CE29B6FC349211 /* Pods-PromptKitTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PromptKitTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-PromptKitTests/Pods-PromptKitTests.release.xcconfig"; sourceTree = "<group>"; };
+		3980D0CDBCA222CCE5E3533B /* Pods-PromptKit.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PromptKit.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PromptKit/Pods-PromptKit.debug.xcconfig"; sourceTree = "<group>"; };
+		875F792665114D9C6734206B /* Pods-PromptKit.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PromptKit.release.xcconfig"; path = "Pods/Target Support Files/Pods-PromptKit/Pods-PromptKit.release.xcconfig"; sourceTree = "<group>"; };
+		937197584CA29246969F8608 /* Pods-PromptKitTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PromptKitTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PromptKitTests/Pods-PromptKitTests.debug.xcconfig"; sourceTree = "<group>"; };
 		D4230F0A1DE84195003C139C /* PKSetting.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PKSetting.h; path = ../../PromptKitOC/PKSetting.h; sourceTree = "<group>"; };
 		D4230F0B1DE84195003C139C /* PKSetting.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PKSetting.m; path = ../../PromptKitOC/PKSetting.m; sourceTree = "<group>"; };
 		D4230F0C1DE84195003C139C /* RACSignal+MJRefresh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "RACSignal+MJRefresh.h"; path = "../../PromptKitOC/RACSignal+MJRefresh.h"; sourceTree = "<group>"; };
 		D4230F0D1DE84195003C139C /* RACSignal+MJRefresh.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "RACSignal+MJRefresh.m"; path = "../../PromptKitOC/RACSignal+MJRefresh.m"; sourceTree = "<group>"; };
-		D4230F0E1DE84195003C139C /* UIScrollView+PKListCounter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIScrollView+PKListCounter.h"; path = "../../PromptKitOC/UIScrollView+PKListCounter.h"; sourceTree = "<group>"; };
-		D4230F0F1DE84195003C139C /* UIScrollView+PKListCounter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIScrollView+PKListCounter.m"; path = "../../PromptKitOC/UIScrollView+PKListCounter.m"; sourceTree = "<group>"; };
+		D4230F0E1DE84195003C139C /* PKListEmptyCounter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PKListEmptyCounter.h; path = ../../PromptKitOC/PKListEmptyCounter.h; sourceTree = "<group>"; };
+		D4230F0F1DE84195003C139C /* PKListEmptyCounter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PKListEmptyCounter.m; path = ../../PromptKitOC/PKListEmptyCounter.m; sourceTree = "<group>"; };
 		D4230F131DE843E7003C139C /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		D47703731D532AA4007BF65C /* PromptKit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PromptKit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D47703771D532AA4007BF65C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		D47703791D532AA4007BF65C /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		D477037A1D532AA4007BF65C /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		D477037C1D532AA4007BF65C /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		D477037D1D532AA4007BF65C /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		D477037C1D532AA4007BF65C /* RootViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RootViewController.h; sourceTree = "<group>"; };
+		D477037D1D532AA4007BF65C /* RootViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
 		D47703801D532AA4007BF65C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D47703821D532AA4007BF65C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D47703851D532AA4007BF65C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -74,8 +82,13 @@
 		D47703A71D532AB6007BF65C /* UIView+PKPromptKit_APP.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIView+PKPromptKit_APP.m"; path = "../../PromptKitOC/UIView+PKPromptKit_APP.m"; sourceTree = "<group>"; };
 		D47703A81D532AB6007BF65C /* UIViewController+PKPrompKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIViewController+PKPrompKit.h"; path = "../../PromptKitOC/UIViewController+PKPrompKit.h"; sourceTree = "<group>"; };
 		D47703A91D532AB6007BF65C /* UIViewController+PKPrompKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIViewController+PKPrompKit.m"; path = "../../PromptKitOC/UIViewController+PKPrompKit.m"; sourceTree = "<group>"; };
-		DF456E55CB7F27813F962737 /* Pods-PromptKit.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PromptKit.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PromptKit/Pods-PromptKit.debug.xcconfig"; sourceTree = "<group>"; };
-		E8D91EC22C4B9666FE4BB584 /* Pods-PromptKit.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PromptKit.release.xcconfig"; path = "Pods/Target Support Files/Pods-PromptKit/Pods-PromptKit.release.xcconfig"; sourceTree = "<group>"; };
+		D4A6CF671E121A580043371C /* ExampleViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExampleViewModel.h; sourceTree = "<group>"; };
+		D4A6CF681E121A580043371C /* ExampleViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExampleViewModel.m; sourceTree = "<group>"; };
+		D4D32B8A1E125063006095D5 /* AFHTTPSessionManager+RACSignal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "AFHTTPSessionManager+RACSignal.h"; sourceTree = "<group>"; };
+		D4D32B8B1E125063006095D5 /* AFHTTPSessionManager+RACSignal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "AFHTTPSessionManager+RACSignal.m"; sourceTree = "<group>"; };
+		D4D32B8C1E125063006095D5 /* AFURLSessionManager+RACSignal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "AFURLSessionManager+RACSignal.h"; sourceTree = "<group>"; };
+		D4D32B8D1E125063006095D5 /* AFURLSessionManager+RACSignal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "AFURLSessionManager+RACSignal.m"; sourceTree = "<group>"; };
+		EDED7BCA231BD3687D8A2148 /* libPods-PromptKitTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-PromptKitTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,7 +96,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2C5D39F3AB3F14FAD4784084 /* libPods-PromptKit.a in Frameworks */,
+				7145A429FF724C145676B6B5 /* libPods-PromptKit.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -91,16 +104,29 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F4ECC67D18A1064530A09BB4 /* libPods-PromptKitTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		B90C51F9C7ABB5B9C43D4D38 /* Frameworks */ = {
+		0CC99A5BAB64334CB0046147 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				4A37B49CEA8EE92EC3422678 /* libPods-PromptKit.a */,
+				3980D0CDBCA222CCE5E3533B /* Pods-PromptKit.debug.xcconfig */,
+				875F792665114D9C6734206B /* Pods-PromptKit.release.xcconfig */,
+				937197584CA29246969F8608 /* Pods-PromptKitTests.debug.xcconfig */,
+				2653AC6EA9CE29B6FC349211 /* Pods-PromptKitTests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		AE04DF6E7CC49C25BFBCE1AB /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				14F476707BE28402FA44540A /* libPods-PromptKit.a */,
+				EDED7BCA231BD3687D8A2148 /* libPods-PromptKitTests.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -112,8 +138,8 @@
 				D47703751D532AA4007BF65C /* PromptKit */,
 				D477038F1D532AA4007BF65C /* PromptKitTests */,
 				D47703741D532AA4007BF65C /* Products */,
-				D502B841112A656450ADF16C /* Pods */,
-				B90C51F9C7ABB5B9C43D4D38 /* Frameworks */,
+				0CC99A5BAB64334CB0046147 /* Pods */,
+				AE04DF6E7CC49C25BFBCE1AB /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -132,9 +158,11 @@
 				D47703B01D532AC4007BF65C /* Pod */,
 				D47703791D532AA4007BF65C /* AppDelegate.h */,
 				D477037A1D532AA4007BF65C /* AppDelegate.m */,
-				D477037C1D532AA4007BF65C /* ViewController.h */,
-				D477037D1D532AA4007BF65C /* ViewController.m */,
+				D477037C1D532AA4007BF65C /* RootViewController.h */,
+				D477037D1D532AA4007BF65C /* RootViewController.m */,
+				D4A6CF641E121A580043371C /* Example */,
 				D477037F1D532AA4007BF65C /* Main.storyboard */,
+				D4D32B891E125063006095D5 /* Networking */,
 				D47703821D532AA4007BF65C /* Assets.xcassets */,
 				D47703841D532AA4007BF65C /* LaunchScreen.storyboard */,
 				D47703871D532AA4007BF65C /* Info.plist */,
@@ -167,8 +195,8 @@
 				D4230F0B1DE84195003C139C /* PKSetting.m */,
 				D4230F0C1DE84195003C139C /* RACSignal+MJRefresh.h */,
 				D4230F0D1DE84195003C139C /* RACSignal+MJRefresh.m */,
-				D4230F0E1DE84195003C139C /* UIScrollView+PKListCounter.h */,
-				D4230F0F1DE84195003C139C /* UIScrollView+PKListCounter.m */,
+				D4230F0E1DE84195003C139C /* PKListEmptyCounter.h */,
+				D4230F0F1DE84195003C139C /* PKListEmptyCounter.m */,
 				D477039B1D532AB6007BF65C /* PKBeansLoadingView.h */,
 				D477039C1D532AB6007BF65C /* PKBeansLoadingView.m */,
 				D477039D1D532AB6007BF65C /* PKPrompKitProtocol.h */,
@@ -188,13 +216,24 @@
 			name = Pod;
 			sourceTree = "<group>";
 		};
-		D502B841112A656450ADF16C /* Pods */ = {
+		D4A6CF641E121A580043371C /* Example */ = {
 			isa = PBXGroup;
 			children = (
-				DF456E55CB7F27813F962737 /* Pods-PromptKit.debug.xcconfig */,
-				E8D91EC22C4B9666FE4BB584 /* Pods-PromptKit.release.xcconfig */,
+				D4A6CF671E121A580043371C /* ExampleViewModel.h */,
+				D4A6CF681E121A580043371C /* ExampleViewModel.m */,
 			);
-			name = Pods;
+			path = Example;
+			sourceTree = "<group>";
+		};
+		D4D32B891E125063006095D5 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				D4D32B8A1E125063006095D5 /* AFHTTPSessionManager+RACSignal.h */,
+				D4D32B8B1E125063006095D5 /* AFHTTPSessionManager+RACSignal.m */,
+				D4D32B8C1E125063006095D5 /* AFURLSessionManager+RACSignal.h */,
+				D4D32B8D1E125063006095D5 /* AFURLSessionManager+RACSignal.m */,
+			);
+			path = Networking;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -204,12 +243,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D47703951D532AA4007BF65C /* Build configuration list for PBXNativeTarget "PromptKit" */;
 			buildPhases = (
-				07A76ED6F03BC0796BCD8AEE /* Check Pods Manifest.lock */,
+				AEFDADF036ABCB55FFC70491 /* [CP] Check Pods Manifest.lock */,
 				D477036F1D532AA4007BF65C /* Sources */,
 				D47703701D532AA4007BF65C /* Frameworks */,
 				D47703711D532AA4007BF65C /* Resources */,
-				F191962C21839452F92DB967 /* Embed Pods Frameworks */,
-				075A2AE58B8CE053F35BB9F3 /* Copy Pods Resources */,
+				2B0042C89FFA4296FEDF8A51 /* [CP] Embed Pods Frameworks */,
+				A75239EF63D403BAAC9B5677 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -224,9 +263,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D47703981D532AA4007BF65C /* Build configuration list for PBXNativeTarget "PromptKitTests" */;
 			buildPhases = (
+				E1C97EC770347B0163D3D7D4 /* [CP] Check Pods Manifest.lock */,
 				D47703881D532AA4007BF65C /* Sources */,
 				D47703891D532AA4007BF65C /* Frameworks */,
 				D477038A1D532AA4007BF65C /* Resources */,
+				675D1ED43245585A18C7BF65 /* [CP] Embed Pods Frameworks */,
+				27609AC7A74423DE67AAA241 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -249,6 +291,7 @@
 				TargetAttributes = {
 					D47703721D532AA4007BF65C = {
 						CreatedOnToolsVersion = 7.3;
+						DevelopmentTeam = VSXKPZWN4F;
 					};
 					D477038B1D532AA4007BF65C = {
 						CreatedOnToolsVersion = 7.3;
@@ -296,14 +339,59 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		075A2AE58B8CE053F35BB9F3 /* Copy Pods Resources */ = {
+		27609AC7A74423DE67AAA241 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Copy Pods Resources";
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PromptKitTests/Pods-PromptKitTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		2B0042C89FFA4296FEDF8A51 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PromptKit/Pods-PromptKit-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		675D1ED43245585A18C7BF65 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PromptKitTests/Pods-PromptKitTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A75239EF63D403BAAC9B5677 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -311,34 +399,34 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PromptKit/Pods-PromptKit-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		07A76ED6F03BC0796BCD8AEE /* Check Pods Manifest.lock */ = {
+		AEFDADF036ABCB55FFC70491 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Check Pods Manifest.lock";
+			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
-		F191962C21839452F92DB967 /* Embed Pods Frameworks */ = {
+		E1C97EC770347B0163D3D7D4 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Embed Pods Frameworks";
+			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PromptKit/Pods-PromptKit-frameworks.sh\"\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -348,17 +436,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D4D32B8E1E125063006095D5 /* AFHTTPSessionManager+RACSignal.m in Sources */,
+				D4D32B8F1E125063006095D5 /* AFURLSessionManager+RACSignal.m in Sources */,
 				D47703AA1D532AB6007BF65C /* PKBeansLoadingView.m in Sources */,
 				D47703AC1D532AB6007BF65C /* PKPromptView.m in Sources */,
 				D47703AB1D532AB6007BF65C /* PKPromptUIDataSource.m in Sources */,
 				D47703AD1D532AB6007BF65C /* RACSignal+PKPromptKit.m in Sources */,
+				D4A6CF6A1E121A580043371C /* ExampleViewModel.m in Sources */,
 				D4230F141DE843E7003C139C /* README.md in Sources */,
 				D47703AE1D532AB6007BF65C /* UIView+PKPromptKit_APP.m in Sources */,
 				D47703AF1D532AB6007BF65C /* UIViewController+PKPrompKit.m in Sources */,
-				D477037E1D532AA4007BF65C /* ViewController.m in Sources */,
+				D477037E1D532AA4007BF65C /* RootViewController.m in Sources */,
 				D4230F101DE84195003C139C /* PKSetting.m in Sources */,
 				D4230F111DE84195003C139C /* RACSignal+MJRefresh.m in Sources */,
-				D4230F121DE84195003C139C /* UIScrollView+PKListCounter.m in Sources */,
+				D4230F121DE84195003C139C /* PKListEmptyCounter.m in Sources */,
 				D477037B1D532AA4007BF65C /* AppDelegate.m in Sources */,
 				D47703781D532AA4007BF65C /* main.m in Sources */,
 			);
@@ -486,11 +577,12 @@
 		};
 		D47703961D532AA4007BF65C /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = DF456E55CB7F27813F962737 /* Pods-PromptKit.debug.xcconfig */;
+			baseConfigurationReference = 3980D0CDBCA222CCE5E3533B /* Pods-PromptKit.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = VSXKPZWN4F;
 				INFOPLIST_FILE = PromptKit/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = IB.PromptKit;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -499,11 +591,12 @@
 		};
 		D47703971D532AA4007BF65C /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = E8D91EC22C4B9666FE4BB584 /* Pods-PromptKit.release.xcconfig */;
+			baseConfigurationReference = 875F792665114D9C6734206B /* Pods-PromptKit.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = VSXKPZWN4F;
 				INFOPLIST_FILE = PromptKit/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = IB.PromptKit;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -512,6 +605,7 @@
 		};
 		D47703991D532AA4007BF65C /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 937197584CA29246969F8608 /* Pods-PromptKitTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = PromptKitTests/Info.plist;
@@ -524,6 +618,7 @@
 		};
 		D477039A1D532AA4007BF65C /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2653AC6EA9CE29B6FC349211 /* Pods-PromptKitTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = PromptKitTests/Info.plist;
