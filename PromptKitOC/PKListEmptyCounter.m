@@ -6,12 +6,7 @@
 //  Copyright © 2016年 UK. All rights reserved.
 //
 
-#import "UIScrollView+PKListCounter.h"
-
-@implementation UIScrollView (listHasData)
-
-@end
-
+#import "PKListEmptyCounter.h"
 
 @implementation UITableView (PKListCounter)
 
@@ -24,6 +19,10 @@
         }
     }
     return NO;
+}
+
+- (void)pk_reloadDataAndCheckEmpty{
+    
 }
 
 @end

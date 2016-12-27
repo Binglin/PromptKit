@@ -9,24 +9,23 @@
 #import <UIKit/UIKit.h>
 
 
-@protocol PKListCounter <NSObject>
+@protocol PKListEmptyCounter <NSObject>
 
 - (BOOL)pk_hasRowsToDisplay;
 
-@end
-
-@interface UIScrollView (listHasData)
-
-@end
-
-
-@interface UITableView (PKListCounter) <PKListCounter>
+- (void)pk_reloadDataAndCheckEmpty;
 
 @end
 
 
 
+@interface UITableView (PKListCounter) <PKListEmptyCounter>
 
-@interface UICollectionView (PKListCounter) <PKListCounter>
+@end
+
+
+
+
+@interface UICollectionView (PKListCounter) <PKListEmptyCounter>
 
 @end
