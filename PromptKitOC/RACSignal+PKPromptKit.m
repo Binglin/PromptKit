@@ -8,7 +8,7 @@
 
 #import "RACSignal+PKPromptKit.h"
 #import "PKPrompKitProtocol.h"
-#import "UIScrollView+PKListCounter.h"
+#import "PKListEmptyCounter.h"
 
 @implementation RACSignal (PKPromptKit)
 
@@ -37,8 +37,8 @@
         
         BOOL listHasData = NO;
         
-        if ([del conformsToProtocol:@protocol(PKListCounter)]) {
-            id<PKListCounter> counter = (id<PKListCounter>)del;
+        if ([del conformsToProtocol:@protocol(PKListEmptyCounter)]) {
+            id<PKListEmptyCounter> counter = (id<PKListEmptyCounter>)del;
             listHasData = [counter pk_hasRowsToDisplay];
         }
         
@@ -85,8 +85,8 @@
         
         BOOL morethan1 = NO;
         
-        if ([del conformsToProtocol:@protocol(PKListCounter)]) {
-            id<PKListCounter> counter = (id<PKListCounter>)del;
+        if ([del conformsToProtocol:@protocol(PKListEmptyCounter)]) {
+            id<PKListEmptyCounter> counter = (id<PKListEmptyCounter>)del;
             morethan1 = [counter pk_hasRowsToDisplay];
         }
         

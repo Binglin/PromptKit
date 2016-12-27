@@ -8,41 +8,42 @@
 
 #import "RACSignal+MJRefresh.h"
 #import <MJRefresh/MJRefresh.h>
+#import <ReactiveCocoa/ReactiveCocoa.h>
 
 
 @implementation UIScrollView (PK_MJRefresh)
 
 
--(void)pk_addRefresh:(id<UIlistDataPullPushProtocol>)del{
+-(void)pk_addRefresh:(id<UIlistPullPushProtocol>)del{
     [self pk_addRefreshHeaderView:del];
 }
 
-- (void)pk_addRefreshLoadMore:(id<UIlistDataPullPushProtocol>)del{
+- (void)pk_addRefreshLoadMore:(id<UIlistPullPushProtocol>)del{
     [self pk_addRefreshHeaderView:del];
     [self pk_addRefreshFooterView:del];
 }
 
 
-- (void)pk_addRefreshHeaderView:(id<UIlistDataPullPushProtocol>)del{
+- (void)pk_addRefreshHeaderView:(id<UIlistPullPushProtocol>)del{
     @weakify(del);
     MJRefreshNormalHeader *normalHeader = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
         @strongify(del);
         [del loadMore:NO];
     }];
-    normalHeader.lastUpdatedTimeLabel.textColor = [UIColor blackContentColor];
-    normalHeader.stateLabel.textColor = [UIColor blackContentColor];
+    normalHeader.lastUpdatedTimeLabel.textColor = [UIColor blackColor];
+    normalHeader.stateLabel.textColor = [UIColor grayColor];
     self.mj_header = normalHeader;
     [normalHeader beginRefreshing];
 }
 
-- (void)pk_addRefreshFooterView:(id<UIlistDataPullPushProtocol>)del{
+- (void)pk_addRefreshFooterView:(id<UIlistPullPushProtocol>)del{
     @weakify(del);
     MJRefreshBackStateFooter *normalFooter = [MJRefreshBackNormalFooter footerWithRefreshingBlock:^{
         @strongify(del);
         [del loadMore:YES];
     }];
     [normalFooter setTitle:@"没有更多了哦" forState:MJRefreshStateNoMoreData];
-    normalFooter.stateLabel.textColor = [UIColor blackContentColor];
+    normalFooter.stateLabel.textColor = [UIColor grayColor];
     self.mj_footer = normalFooter;
     self.mj_footer.hidden = YES;
 }

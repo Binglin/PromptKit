@@ -9,7 +9,6 @@
 #import "UIView+PKPromptKit_APP.h"
 #import "PKPromptView.h"
 #import "PKBeansLoadingView.h"
-#import <SVProgressHUD/SVProgressHUD.h>
 #import <MBProgressHUD/MBProgressHUD.h>
 
 @implementation UIView (PKPromptKit)
@@ -32,7 +31,6 @@
     }else{
         if ([self.nextResponder isKindOfClass:[UIViewController class]]) {
             hud = [MBProgressHUD showHUDAddedTo:self animated:YES];
-            hud.top = [UIScreen customNavigationBarHeight]/2.0;
         }else{
             hud = [MBProgressHUD showHUDAddedTo:self animated:YES];
         }
@@ -69,6 +67,7 @@
         emptyView = (PKPromptView *)view;
     }else{
         CGRect frame = self.prompKitContainerView.bounds;
+        frame.origin.y = 0;
         if ([self isKindOfClass:[UITableView class]]) {
             UITableView *table = (UITableView *)self;
             if (table.tableHeaderView) {
@@ -136,14 +135,6 @@
 }
 
 - (void)pk_showToastText:(NSString *)text{
-    /*
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        [SVProgressHUD showWithStatus:text];
-        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-            [SVProgressHUD dismissWithDelay:2.0];
-        });
-    });
-    */
     
     MBProgressHUD *hud = [MBProgressHUD HUDForView:self];
     if(hud){
@@ -151,7 +142,6 @@
     }else{
         if ([self.nextResponder isKindOfClass:[UIViewController class]]) {
             hud = [MBProgressHUD showHUDAddedTo:self animated:YES];
-            hud.top = [UIScreen customNavigationBarHeight]/2.0;
         }else{
             hud = [MBProgressHUD showHUDAddedTo:self animated:YES];
         }
@@ -163,7 +153,6 @@
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         [hud hideAnimated:YES];
     });
-//    [hud hideAnimated:YES afterDelay:2];
 }
 
 #pragma mark - private
