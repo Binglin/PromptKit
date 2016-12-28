@@ -8,9 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		7145A429FF724C145676B6B5 /* libPods-PromptKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 14F476707BE28402FA44540A /* libPods-PromptKit.a */; };
-		D4230F101DE84195003C139C /* PKSetting.m in Sources */ = {isa = PBXBuildFile; fileRef = D4230F0B1DE84195003C139C /* PKSetting.m */; };
-		D4230F111DE84195003C139C /* RACSignal+MJRefresh.m in Sources */ = {isa = PBXBuildFile; fileRef = D4230F0D1DE84195003C139C /* RACSignal+MJRefresh.m */; };
-		D4230F121DE84195003C139C /* PKListEmptyCounter.m in Sources */ = {isa = PBXBuildFile; fileRef = D4230F0F1DE84195003C139C /* PKListEmptyCounter.m */; };
 		D4230F141DE843E7003C139C /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = D4230F131DE843E7003C139C /* README.md */; };
 		D47703781D532AA4007BF65C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D47703771D532AA4007BF65C /* main.m */; };
 		D477037B1D532AA4007BF65C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D477037A1D532AA4007BF65C /* AppDelegate.m */; };
@@ -19,12 +16,15 @@
 		D47703831D532AA4007BF65C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D47703821D532AA4007BF65C /* Assets.xcassets */; };
 		D47703861D532AA4007BF65C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D47703841D532AA4007BF65C /* LaunchScreen.storyboard */; };
 		D47703911D532AA4007BF65C /* PromptKitTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D47703901D532AA4007BF65C /* PromptKitTests.m */; };
-		D47703AA1D532AB6007BF65C /* PKBeansLoadingView.m in Sources */ = {isa = PBXBuildFile; fileRef = D477039C1D532AB6007BF65C /* PKBeansLoadingView.m */; };
-		D47703AB1D532AB6007BF65C /* PKPromptUIDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = D47703A01D532AB6007BF65C /* PKPromptUIDataSource.m */; };
-		D47703AC1D532AB6007BF65C /* PKPromptView.m in Sources */ = {isa = PBXBuildFile; fileRef = D47703A21D532AB6007BF65C /* PKPromptView.m */; };
-		D47703AD1D532AB6007BF65C /* RACSignal+PKPromptKit.m in Sources */ = {isa = PBXBuildFile; fileRef = D47703A51D532AB6007BF65C /* RACSignal+PKPromptKit.m */; };
-		D47703AE1D532AB6007BF65C /* UIView+PKPromptKit_APP.m in Sources */ = {isa = PBXBuildFile; fileRef = D47703A71D532AB6007BF65C /* UIView+PKPromptKit_APP.m */; };
-		D47703AF1D532AB6007BF65C /* UIViewController+PKPrompKit.m in Sources */ = {isa = PBXBuildFile; fileRef = D47703A91D532AB6007BF65C /* UIViewController+PKPrompKit.m */; };
+		D4986D931E135460007779FF /* PKBeansLoadingView.m in Sources */ = {isa = PBXBuildFile; fileRef = D4986D7F1E135460007779FF /* PKBeansLoadingView.m */; };
+		D4986D941E135460007779FF /* PKListEmptyCounter.m in Sources */ = {isa = PBXBuildFile; fileRef = D4986D811E135460007779FF /* PKListEmptyCounter.m */; };
+		D4986D951E135460007779FF /* PKPromptUIDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = D4986D851E135460007779FF /* PKPromptUIDataSource.m */; };
+		D4986D961E135460007779FF /* PKPromptView.m in Sources */ = {isa = PBXBuildFile; fileRef = D4986D871E135460007779FF /* PKPromptView.m */; };
+		D4986D971E135460007779FF /* PKSetting.m in Sources */ = {isa = PBXBuildFile; fileRef = D4986D891E135460007779FF /* PKSetting.m */; };
+		D4986D981E135460007779FF /* RACSignal+MJRefresh.m in Sources */ = {isa = PBXBuildFile; fileRef = D4986D8C1E135460007779FF /* RACSignal+MJRefresh.m */; };
+		D4986D991E135460007779FF /* RACSignal+PKPromptKit.m in Sources */ = {isa = PBXBuildFile; fileRef = D4986D8E1E135460007779FF /* RACSignal+PKPromptKit.m */; };
+		D4986D9A1E135460007779FF /* UIView+PKPromptKit_APP.m in Sources */ = {isa = PBXBuildFile; fileRef = D4986D901E135460007779FF /* UIView+PKPromptKit_APP.m */; };
+		D4986D9B1E135460007779FF /* UIViewController+PKPrompKit.m in Sources */ = {isa = PBXBuildFile; fileRef = D4986D921E135460007779FF /* UIViewController+PKPrompKit.m */; };
 		D4A6CF6A1E121A580043371C /* ExampleViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D4A6CF681E121A580043371C /* ExampleViewModel.m */; };
 		D4D32B8E1E125063006095D5 /* AFHTTPSessionManager+RACSignal.m in Sources */ = {isa = PBXBuildFile; fileRef = D4D32B8B1E125063006095D5 /* AFHTTPSessionManager+RACSignal.m */; };
 		D4D32B8F1E125063006095D5 /* AFURLSessionManager+RACSignal.m in Sources */ = {isa = PBXBuildFile; fileRef = D4D32B8D1E125063006095D5 /* AFURLSessionManager+RACSignal.m */; };
@@ -47,12 +47,6 @@
 		3980D0CDBCA222CCE5E3533B /* Pods-PromptKit.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PromptKit.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PromptKit/Pods-PromptKit.debug.xcconfig"; sourceTree = "<group>"; };
 		875F792665114D9C6734206B /* Pods-PromptKit.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PromptKit.release.xcconfig"; path = "Pods/Target Support Files/Pods-PromptKit/Pods-PromptKit.release.xcconfig"; sourceTree = "<group>"; };
 		937197584CA29246969F8608 /* Pods-PromptKitTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PromptKitTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PromptKitTests/Pods-PromptKitTests.debug.xcconfig"; sourceTree = "<group>"; };
-		D4230F0A1DE84195003C139C /* PKSetting.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PKSetting.h; path = ../../PromptKitOC/PKSetting.h; sourceTree = "<group>"; };
-		D4230F0B1DE84195003C139C /* PKSetting.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PKSetting.m; path = ../../PromptKitOC/PKSetting.m; sourceTree = "<group>"; };
-		D4230F0C1DE84195003C139C /* RACSignal+MJRefresh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "RACSignal+MJRefresh.h"; path = "../../PromptKitOC/RACSignal+MJRefresh.h"; sourceTree = "<group>"; };
-		D4230F0D1DE84195003C139C /* RACSignal+MJRefresh.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "RACSignal+MJRefresh.m"; path = "../../PromptKitOC/RACSignal+MJRefresh.m"; sourceTree = "<group>"; };
-		D4230F0E1DE84195003C139C /* PKListEmptyCounter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PKListEmptyCounter.h; path = ../../PromptKitOC/PKListEmptyCounter.h; sourceTree = "<group>"; };
-		D4230F0F1DE84195003C139C /* PKListEmptyCounter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PKListEmptyCounter.m; path = ../../PromptKitOC/PKListEmptyCounter.m; sourceTree = "<group>"; };
 		D4230F131DE843E7003C139C /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		D47703731D532AA4007BF65C /* PromptKit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PromptKit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D47703771D532AA4007BF65C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -67,21 +61,27 @@
 		D477038C1D532AA4007BF65C /* PromptKitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PromptKitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D47703901D532AA4007BF65C /* PromptKitTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PromptKitTests.m; sourceTree = "<group>"; };
 		D47703921D532AA4007BF65C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		D477039B1D532AB6007BF65C /* PKBeansLoadingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PKBeansLoadingView.h; path = ../../PromptKitOC/PKBeansLoadingView.h; sourceTree = "<group>"; };
-		D477039C1D532AB6007BF65C /* PKBeansLoadingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PKBeansLoadingView.m; path = ../../PromptKitOC/PKBeansLoadingView.m; sourceTree = "<group>"; };
-		D477039D1D532AB6007BF65C /* PKPrompKitProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PKPrompKitProtocol.h; path = ../../PromptKitOC/PKPrompKitProtocol.h; sourceTree = "<group>"; };
-		D477039E1D532AB6007BF65C /* PKPromptKitEnums.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PKPromptKitEnums.h; path = ../../PromptKitOC/PKPromptKitEnums.h; sourceTree = "<group>"; };
-		D477039F1D532AB6007BF65C /* PKPromptUIDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PKPromptUIDataSource.h; path = ../../PromptKitOC/PKPromptUIDataSource.h; sourceTree = "<group>"; };
-		D47703A01D532AB6007BF65C /* PKPromptUIDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PKPromptUIDataSource.m; path = ../../PromptKitOC/PKPromptUIDataSource.m; sourceTree = "<group>"; };
-		D47703A11D532AB6007BF65C /* PKPromptView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PKPromptView.h; path = ../../PromptKitOC/PKPromptView.h; sourceTree = "<group>"; };
-		D47703A21D532AB6007BF65C /* PKPromptView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PKPromptView.m; path = ../../PromptKitOC/PKPromptView.m; sourceTree = "<group>"; };
-		D47703A31D532AB6007BF65C /* PromptKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PromptKit.h; path = ../../PromptKitOC/PromptKit.h; sourceTree = "<group>"; };
-		D47703A41D532AB6007BF65C /* RACSignal+PKPromptKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "RACSignal+PKPromptKit.h"; path = "../../PromptKitOC/RACSignal+PKPromptKit.h"; sourceTree = "<group>"; };
-		D47703A51D532AB6007BF65C /* RACSignal+PKPromptKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "RACSignal+PKPromptKit.m"; path = "../../PromptKitOC/RACSignal+PKPromptKit.m"; sourceTree = "<group>"; };
-		D47703A61D532AB6007BF65C /* UIView+PKPromptKit_APP.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIView+PKPromptKit_APP.h"; path = "../../PromptKitOC/UIView+PKPromptKit_APP.h"; sourceTree = "<group>"; };
-		D47703A71D532AB6007BF65C /* UIView+PKPromptKit_APP.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIView+PKPromptKit_APP.m"; path = "../../PromptKitOC/UIView+PKPromptKit_APP.m"; sourceTree = "<group>"; };
-		D47703A81D532AB6007BF65C /* UIViewController+PKPrompKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIViewController+PKPrompKit.h"; path = "../../PromptKitOC/UIViewController+PKPrompKit.h"; sourceTree = "<group>"; };
-		D47703A91D532AB6007BF65C /* UIViewController+PKPrompKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIViewController+PKPrompKit.m"; path = "../../PromptKitOC/UIViewController+PKPrompKit.m"; sourceTree = "<group>"; };
+		D4986D7E1E135460007779FF /* PKBeansLoadingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PKBeansLoadingView.h; sourceTree = "<group>"; };
+		D4986D7F1E135460007779FF /* PKBeansLoadingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PKBeansLoadingView.m; sourceTree = "<group>"; };
+		D4986D801E135460007779FF /* PKListEmptyCounter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PKListEmptyCounter.h; sourceTree = "<group>"; };
+		D4986D811E135460007779FF /* PKListEmptyCounter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PKListEmptyCounter.m; sourceTree = "<group>"; };
+		D4986D821E135460007779FF /* PKPrompKitProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PKPrompKitProtocol.h; sourceTree = "<group>"; };
+		D4986D831E135460007779FF /* PKPromptKitEnums.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PKPromptKitEnums.h; sourceTree = "<group>"; };
+		D4986D841E135460007779FF /* PKPromptUIDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PKPromptUIDataSource.h; sourceTree = "<group>"; };
+		D4986D851E135460007779FF /* PKPromptUIDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PKPromptUIDataSource.m; sourceTree = "<group>"; };
+		D4986D861E135460007779FF /* PKPromptView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PKPromptView.h; sourceTree = "<group>"; };
+		D4986D871E135460007779FF /* PKPromptView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PKPromptView.m; sourceTree = "<group>"; };
+		D4986D881E135460007779FF /* PKSetting.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PKSetting.h; sourceTree = "<group>"; };
+		D4986D891E135460007779FF /* PKSetting.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PKSetting.m; sourceTree = "<group>"; };
+		D4986D8A1E135460007779FF /* PromptKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PromptKit.h; sourceTree = "<group>"; };
+		D4986D8B1E135460007779FF /* RACSignal+MJRefresh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "RACSignal+MJRefresh.h"; sourceTree = "<group>"; };
+		D4986D8C1E135460007779FF /* RACSignal+MJRefresh.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "RACSignal+MJRefresh.m"; sourceTree = "<group>"; };
+		D4986D8D1E135460007779FF /* RACSignal+PKPromptKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "RACSignal+PKPromptKit.h"; sourceTree = "<group>"; };
+		D4986D8E1E135460007779FF /* RACSignal+PKPromptKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "RACSignal+PKPromptKit.m"; sourceTree = "<group>"; };
+		D4986D8F1E135460007779FF /* UIView+PKPromptKit_APP.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+PKPromptKit_APP.h"; sourceTree = "<group>"; };
+		D4986D901E135460007779FF /* UIView+PKPromptKit_APP.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+PKPromptKit_APP.m"; sourceTree = "<group>"; };
+		D4986D911E135460007779FF /* UIViewController+PKPrompKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+PKPrompKit.h"; sourceTree = "<group>"; };
+		D4986D921E135460007779FF /* UIViewController+PKPrompKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+PKPrompKit.m"; sourceTree = "<group>"; };
 		D4A6CF671E121A580043371C /* ExampleViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExampleViewModel.h; sourceTree = "<group>"; };
 		D4A6CF681E121A580043371C /* ExampleViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExampleViewModel.m; sourceTree = "<group>"; };
 		D4D32B8A1E125063006095D5 /* AFHTTPSessionManager+RACSignal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "AFHTTPSessionManager+RACSignal.h"; sourceTree = "<group>"; };
@@ -155,11 +155,11 @@
 		D47703751D532AA4007BF65C /* PromptKit */ = {
 			isa = PBXGroup;
 			children = (
-				D47703B01D532AC4007BF65C /* Pod */,
 				D47703791D532AA4007BF65C /* AppDelegate.h */,
 				D477037A1D532AA4007BF65C /* AppDelegate.m */,
 				D477037C1D532AA4007BF65C /* RootViewController.h */,
 				D477037D1D532AA4007BF65C /* RootViewController.m */,
+				D4986D7D1E135460007779FF /* Pod */,
 				D4A6CF641E121A580043371C /* Example */,
 				D477037F1D532AA4007BF65C /* Main.storyboard */,
 				D4D32B891E125063006095D5 /* Networking */,
@@ -188,32 +188,32 @@
 			path = PromptKitTests;
 			sourceTree = "<group>";
 		};
-		D47703B01D532AC4007BF65C /* Pod */ = {
+		D4986D7D1E135460007779FF /* Pod */ = {
 			isa = PBXGroup;
 			children = (
-				D4230F0A1DE84195003C139C /* PKSetting.h */,
-				D4230F0B1DE84195003C139C /* PKSetting.m */,
-				D4230F0C1DE84195003C139C /* RACSignal+MJRefresh.h */,
-				D4230F0D1DE84195003C139C /* RACSignal+MJRefresh.m */,
-				D4230F0E1DE84195003C139C /* PKListEmptyCounter.h */,
-				D4230F0F1DE84195003C139C /* PKListEmptyCounter.m */,
-				D477039B1D532AB6007BF65C /* PKBeansLoadingView.h */,
-				D477039C1D532AB6007BF65C /* PKBeansLoadingView.m */,
-				D477039D1D532AB6007BF65C /* PKPrompKitProtocol.h */,
-				D477039E1D532AB6007BF65C /* PKPromptKitEnums.h */,
-				D477039F1D532AB6007BF65C /* PKPromptUIDataSource.h */,
-				D47703A01D532AB6007BF65C /* PKPromptUIDataSource.m */,
-				D47703A11D532AB6007BF65C /* PKPromptView.h */,
-				D47703A21D532AB6007BF65C /* PKPromptView.m */,
-				D47703A31D532AB6007BF65C /* PromptKit.h */,
-				D47703A41D532AB6007BF65C /* RACSignal+PKPromptKit.h */,
-				D47703A51D532AB6007BF65C /* RACSignal+PKPromptKit.m */,
-				D47703A61D532AB6007BF65C /* UIView+PKPromptKit_APP.h */,
-				D47703A71D532AB6007BF65C /* UIView+PKPromptKit_APP.m */,
-				D47703A81D532AB6007BF65C /* UIViewController+PKPrompKit.h */,
-				D47703A91D532AB6007BF65C /* UIViewController+PKPrompKit.m */,
+				D4986D7E1E135460007779FF /* PKBeansLoadingView.h */,
+				D4986D7F1E135460007779FF /* PKBeansLoadingView.m */,
+				D4986D801E135460007779FF /* PKListEmptyCounter.h */,
+				D4986D811E135460007779FF /* PKListEmptyCounter.m */,
+				D4986D821E135460007779FF /* PKPrompKitProtocol.h */,
+				D4986D831E135460007779FF /* PKPromptKitEnums.h */,
+				D4986D841E135460007779FF /* PKPromptUIDataSource.h */,
+				D4986D851E135460007779FF /* PKPromptUIDataSource.m */,
+				D4986D861E135460007779FF /* PKPromptView.h */,
+				D4986D871E135460007779FF /* PKPromptView.m */,
+				D4986D881E135460007779FF /* PKSetting.h */,
+				D4986D891E135460007779FF /* PKSetting.m */,
+				D4986D8A1E135460007779FF /* PromptKit.h */,
+				D4986D8B1E135460007779FF /* RACSignal+MJRefresh.h */,
+				D4986D8C1E135460007779FF /* RACSignal+MJRefresh.m */,
+				D4986D8D1E135460007779FF /* RACSignal+PKPromptKit.h */,
+				D4986D8E1E135460007779FF /* RACSignal+PKPromptKit.m */,
+				D4986D8F1E135460007779FF /* UIView+PKPromptKit_APP.h */,
+				D4986D901E135460007779FF /* UIView+PKPromptKit_APP.m */,
+				D4986D911E135460007779FF /* UIViewController+PKPrompKit.h */,
+				D4986D921E135460007779FF /* UIViewController+PKPrompKit.m */,
 			);
-			name = Pod;
+			path = Pod;
 			sourceTree = "<group>";
 		};
 		D4A6CF641E121A580043371C /* Example */ = {
@@ -437,21 +437,21 @@
 			buildActionMask = 2147483647;
 			files = (
 				D4D32B8E1E125063006095D5 /* AFHTTPSessionManager+RACSignal.m in Sources */,
+				D4986D9B1E135460007779FF /* UIViewController+PKPrompKit.m in Sources */,
+				D4986D9A1E135460007779FF /* UIView+PKPromptKit_APP.m in Sources */,
+				D4986D951E135460007779FF /* PKPromptUIDataSource.m in Sources */,
+				D4986D941E135460007779FF /* PKListEmptyCounter.m in Sources */,
+				D4986D971E135460007779FF /* PKSetting.m in Sources */,
+				D4986D961E135460007779FF /* PKPromptView.m in Sources */,
 				D4D32B8F1E125063006095D5 /* AFURLSessionManager+RACSignal.m in Sources */,
-				D47703AA1D532AB6007BF65C /* PKBeansLoadingView.m in Sources */,
-				D47703AC1D532AB6007BF65C /* PKPromptView.m in Sources */,
-				D47703AB1D532AB6007BF65C /* PKPromptUIDataSource.m in Sources */,
-				D47703AD1D532AB6007BF65C /* RACSignal+PKPromptKit.m in Sources */,
 				D4A6CF6A1E121A580043371C /* ExampleViewModel.m in Sources */,
 				D4230F141DE843E7003C139C /* README.md in Sources */,
-				D47703AE1D532AB6007BF65C /* UIView+PKPromptKit_APP.m in Sources */,
-				D47703AF1D532AB6007BF65C /* UIViewController+PKPrompKit.m in Sources */,
+				D4986D931E135460007779FF /* PKBeansLoadingView.m in Sources */,
 				D477037E1D532AA4007BF65C /* RootViewController.m in Sources */,
-				D4230F101DE84195003C139C /* PKSetting.m in Sources */,
-				D4230F111DE84195003C139C /* RACSignal+MJRefresh.m in Sources */,
-				D4230F121DE84195003C139C /* PKListEmptyCounter.m in Sources */,
+				D4986D991E135460007779FF /* RACSignal+PKPromptKit.m in Sources */,
 				D477037B1D532AA4007BF65C /* AppDelegate.m in Sources */,
 				D47703781D532AA4007BF65C /* main.m in Sources */,
+				D4986D981E135460007779FF /* RACSignal+MJRefresh.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

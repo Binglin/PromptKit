@@ -1,18 +1,18 @@
 //
 //  ViewController.swift
-//  PromptKit
+//  PromptKit.Swift
 //
-//  Created by ET|冰琳 on 16/8/4.
+//  Created by ET|冰琳 on 2016/12/28.
 //  Copyright © 2016年 IB. All rights reserved.
 //
 
 import UIKit
-import ReactiveCocoa
 
 class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        // Do any additional setup after loading the view, typically from a nib.
     }
 
     override func didReceiveMemoryWarning() {
