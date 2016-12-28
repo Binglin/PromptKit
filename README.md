@@ -1,41 +1,41 @@
 # PromptKit
 show Loading、error、empty with RACSignal
 
-
+![gif](flows/EmptyError.gif)
 
 # appearance
 ### global appearance
 - set `PKPromtView`background color
- 
+
  ```
  [[PKPromptView appearance] setBackgroundColor:[UIColor lightGrayColor]];
  ```
  - set global empty title 、 empty icon
- 
+
  ```
  PKSetting *pkDefault     = [PKSetting Default];
  pkDefault.empty.title    = @"oops, there is nothing";
  pkDefault.empty.iconName = @"global_empty_logo";
  ```
- 
+
  - set global error title、error icon
- 
+
  ```
  pkDefault.error.title    = @"something wrong";
  pkDefault.error.iconName = @"global_error_logo";
  pkDefault.error.btnTitle = @"tap to refresh";
  ```
- 
+
  - set action button style
- 
+
  ```
  pkDefault.style.actionBtn.titleLabel.font = [UIFont systemFontOfSize:15.0f]];
  [pkDefault.style.actionBtn setBackgroundImage:[UIImage imageNamed:@"prompt_action_normal"] forState:UIControlStateNormal];
  ```
- 
 
 
-# empty 
+
+# empty
 ### empty flows
 ![Empty flows](flows/empty.png)
 ### how to use
@@ -66,9 +66,9 @@ id<PKLoadingViewProtocol> del = ...
 ### how to use
 ``` Objective-C
 RACSignal *signal = ...;
-    
+
 id<PKErrorViewProtocol> del = ...;
-    
+
 [[signal pk_observerError:del reload:^{
 	// action execute by tap button or view to reload when error occure
 
@@ -83,9 +83,9 @@ id<PKErrorViewProtocol> del = ...;
 ### how to use
 ```
 RACSignal *signal = ...;
-    
+
 id<PKErrorToastProtocol> del = ...;
-    
+
 [[signal pk_observerErrorToast:del] subscribeNext:^(id x) {
 	// next of signal
 }];
