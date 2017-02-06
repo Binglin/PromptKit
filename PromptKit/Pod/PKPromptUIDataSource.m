@@ -15,21 +15,29 @@ static  NSString * const PKDefaultErrorTitle = @"请求失败";
 static  NSString * const PKDefaultErrorLogo  = @"pk_global_error_icon";
 
 
-
+static PKPromptUIDataSource *_defaultEmptyEntity = nil;
+static PKPromptUIDataSource *_defaultErrorEntity = nil;
 
 
 @implementation PKPromptUIDataSource
 
 + (instancetype)defaultEmptyEntity{
     
+    if (_defaultEmptyEntity) {
+        return _defaultEmptyEntity;
+    }
+
     PKPromptUIDataSource *empty = [PKPromptUIDataSource new];
     empty.title     = PKDefaultEmptyTitle;
     empty.iconName  = PKDefaultEmptyLogo;
-
     return empty;
 }
 
 + (instancetype)defaultErrorEntity{
+    
+    if (_defaultErrorEntity) {
+        return _defaultErrorEntity;
+    }
     
     PKPromptUIDataSource *error = [PKPromptUIDataSource new];
     error.title     = PKDefaultErrorTitle;
@@ -59,6 +67,14 @@ static  NSString * const PKDefaultErrorLogo  = @"pk_global_error_icon";
         self.iconName = logoName;
     }
     return self;
+}
+
++ (void)setDefaultEmptyEntity:(PKPromptUIDataSource *)entity{
+    _defaultEmptyEntity = entity;
+}
+
++ (void)setDefaultErrorEntity:(PKPromptUIDataSource *)entity{
+    _defaultErrorEntity = entity;
 }
 @end
 

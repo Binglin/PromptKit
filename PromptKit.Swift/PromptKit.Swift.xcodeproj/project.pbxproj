@@ -7,22 +7,25 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D476F24E1E48849A006F6C48 /* PKListCounter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D476F24B1E48849A006F6C48 /* PKListCounter.swift */; };
+		D476F24F1E48849A006F6C48 /* Signal+PromptKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = D476F24C1E48849A006F6C48 /* Signal+PromptKit.swift */; };
+		D476F2501E48849A006F6C48 /* UIScrollView+MJRefresh.swift in Sources */ = {isa = PBXBuildFile; fileRef = D476F24D1E48849A006F6C48 /* UIScrollView+MJRefresh.swift */; };
 		D4986D491E135355007779FF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4986D481E135355007779FF /* AppDelegate.swift */; };
 		D4986D4E1E135355007779FF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D4986D4C1E135355007779FF /* Main.storyboard */; };
 		D4986D501E135355007779FF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D4986D4F1E135355007779FF /* Assets.xcassets */; };
 		D4986D531E135355007779FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D4986D511E135355007779FF /* LaunchScreen.storyboard */; };
 		D4986D741E135451007779FF /* BeansLoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4986D6B1E135451007779FF /* BeansLoadingView.swift */; };
-		D4986D751E135451007779FF /* Observable+PromptKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4986D6C1E135451007779FF /* Observable+PromptKit.swift */; };
 		D4986D761E135451007779FF /* PromptKitProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4986D6D1E135451007779FF /* PromptKitProtocol.swift */; };
 		D4986D771E135451007779FF /* PromptView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4986D6E1E135451007779FF /* PromptView.swift */; };
 		D4986D781E135451007779FF /* PromptViewUIData.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4986D6F1E135451007779FF /* PromptViewUIData.swift */; };
-		D4986D791E135451007779FF /* SignalProducer+PromptKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4986D701E135451007779FF /* SignalProducer+PromptKit.swift */; };
 		D4986D7A1E135451007779FF /* UIView+PromptKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4986D711E135451007779FF /* UIView+PromptKit.swift */; };
-		D4986D7B1E135451007779FF /* UIViewController+PromptKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4986D721E135451007779FF /* UIViewController+PromptKit.swift */; };
 		D4986D7C1E135451007779FF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4986D731E135451007779FF /* ViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		D476F24B1E48849A006F6C48 /* PKListCounter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PKListCounter.swift; sourceTree = "<group>"; };
+		D476F24C1E48849A006F6C48 /* Signal+PromptKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Signal+PromptKit.swift"; sourceTree = "<group>"; };
+		D476F24D1E48849A006F6C48 /* UIScrollView+MJRefresh.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIScrollView+MJRefresh.swift"; sourceTree = "<group>"; };
 		D4986D451E135355007779FF /* PromptKit.Swift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PromptKit.Swift.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D4986D481E135355007779FF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D4986D4D1E135355007779FF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -30,13 +33,10 @@
 		D4986D521E135355007779FF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D4986D541E135355007779FF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D4986D6B1E135451007779FF /* BeansLoadingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BeansLoadingView.swift; sourceTree = "<group>"; };
-		D4986D6C1E135451007779FF /* Observable+PromptKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Observable+PromptKit.swift"; sourceTree = "<group>"; };
 		D4986D6D1E135451007779FF /* PromptKitProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PromptKitProtocol.swift; sourceTree = "<group>"; };
 		D4986D6E1E135451007779FF /* PromptView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PromptView.swift; sourceTree = "<group>"; };
 		D4986D6F1E135451007779FF /* PromptViewUIData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PromptViewUIData.swift; sourceTree = "<group>"; };
-		D4986D701E135451007779FF /* SignalProducer+PromptKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SignalProducer+PromptKit.swift"; sourceTree = "<group>"; };
 		D4986D711E135451007779FF /* UIView+PromptKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+PromptKit.swift"; sourceTree = "<group>"; };
-		D4986D721E135451007779FF /* UIViewController+PromptKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+PromptKit.swift"; sourceTree = "<group>"; };
 		D4986D731E135451007779FF /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -85,13 +85,13 @@
 			isa = PBXGroup;
 			children = (
 				D4986D6B1E135451007779FF /* BeansLoadingView.swift */,
-				D4986D6C1E135451007779FF /* Observable+PromptKit.swift */,
 				D4986D6D1E135451007779FF /* PromptKitProtocol.swift */,
 				D4986D6E1E135451007779FF /* PromptView.swift */,
 				D4986D6F1E135451007779FF /* PromptViewUIData.swift */,
-				D4986D701E135451007779FF /* SignalProducer+PromptKit.swift */,
 				D4986D711E135451007779FF /* UIView+PromptKit.swift */,
-				D4986D721E135451007779FF /* UIViewController+PromptKit.swift */,
+				D476F24B1E48849A006F6C48 /* PKListCounter.swift */,
+				D476F24C1E48849A006F6C48 /* Signal+PromptKit.swift */,
+				D476F24D1E48849A006F6C48 /* UIScrollView+MJRefresh.swift */,
 			);
 			path = Pod;
 			sourceTree = "<group>";
@@ -170,14 +170,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				D4986D7C1E135451007779FF /* ViewController.swift in Sources */,
-				D4986D791E135451007779FF /* SignalProducer+PromptKit.swift in Sources */,
 				D4986D491E135355007779FF /* AppDelegate.swift in Sources */,
 				D4986D741E135451007779FF /* BeansLoadingView.swift in Sources */,
 				D4986D781E135451007779FF /* PromptViewUIData.swift in Sources */,
-				D4986D7B1E135451007779FF /* UIViewController+PromptKit.swift in Sources */,
+				D476F24F1E48849A006F6C48 /* Signal+PromptKit.swift in Sources */,
 				D4986D761E135451007779FF /* PromptKitProtocol.swift in Sources */,
+				D476F2501E48849A006F6C48 /* UIScrollView+MJRefresh.swift in Sources */,
+				D476F24E1E48849A006F6C48 /* PKListCounter.swift in Sources */,
 				D4986D771E135451007779FF /* PromptView.swift in Sources */,
-				D4986D751E135451007779FF /* Observable+PromptKit.swift in Sources */,
 				D4986D7A1E135451007779FF /* UIView+PromptKit.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -340,6 +340,7 @@
 				D4986D591E135355007779FF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

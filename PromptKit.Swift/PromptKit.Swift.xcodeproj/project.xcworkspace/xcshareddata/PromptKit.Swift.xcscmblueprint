@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "EECFBCBE662E66563E5A35551F81A2D580DC566E",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "EECFBCBE662E66563E5A35551F81A2D580DC566E" : 9223372036854775807,
+    "FAFEF355647C0046669203118865F1E425458C80" : 9223372036854775807
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "23C9CE6C-FBF2-41FF-8EC7-8F71B7D6BA01",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "EECFBCBE662E66563E5A35551F81A2D580DC566E" : "PromptKit\/",
+    "FAFEF355647C0046669203118865F1E425458C80" : ".."
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "PromptKit.Swift",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "PromptKit.Swift\/PromptKit.Swift.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/Binglin\/PromptKit.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "EECFBCBE662E66563E5A35551F81A2D580DC566E"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "172.16.0.132:UOKOMobile\/WorkOrderSystem.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "FAFEF355647C0046669203118865F1E425458C80"
+    }
+  ]
+}

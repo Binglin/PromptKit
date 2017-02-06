@@ -9,6 +9,7 @@
 #import "UIView+PKPromptKit_APP.h"
 #import "PKPromptView.h"
 #import "PKBeansLoadingView.h"
+#import "PKPromptKitEnums.h"
 #import <MBProgressHUD/MBProgressHUD.h>
 
 @implementation UIView (PKPromptKit)

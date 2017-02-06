@@ -17,7 +17,6 @@
  *  除了app中可统一处理相应逻辑外 自定义各个处理更灵活
  *
  */
-#import "PKSetting.h"
 
 #import "PKPromptKitEnums.h"
 #import "PKPrompKitProtocol.h"

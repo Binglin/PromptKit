@@ -27,8 +27,18 @@
     
     self.tableView.tableFooterView = [UIView new];
     
-    [PKSetting Default].empty.iconName = @"empty_logo";
-    [PKSetting Default].error.iconName = @"error_offline";
+    PKPromptUIDataSource *empty = [PKPromptUIDataSource new];
+    empty.title = @"empty tint text";
+    empty.iconName = @"empty_logo";
+    
+    [PKPromptUIDataSource setDefaultEmptyEntity:empty];
+    
+    PKPromptUIDataSource *error = [PKPromptUIDataSource new];
+    error.title = @"empty tint text";
+    error.iconName = @"empty_logo";
+    
+    [PKPromptUIDataSource setDefaultErrorEntity:error];
+    
     
     [self.tableView pk_addRefresh:self];
     

@@ -18,16 +18,16 @@
 @property (nonatomic, copy  ) dispatch_block_t reloadExecution;
 @property (nonatomic, copy  ) NSString         *btnTitle;
 
-
 + (instancetype)defaultEmptyEntity;
 + (instancetype)defaultErrorEntity;
-
 
 - (instancetype)initWithEmptyTitle:(NSString *)title;
 - (instancetype)initWithErrorTitle:(NSString *)title;
 
-
 - (instancetype)initWithTitle:(NSString *)title logo:(NSString *)logoName;
+
++ (void)setDefaultEmptyEntity:(PKPromptUIDataSource *)entity;
++ (void)setDefaultErrorEntity:(PKPromptUIDataSource *)entity;
 
 @end
 
