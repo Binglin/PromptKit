@@ -18,14 +18,21 @@ class PromptView: UIView {
     
     var imageView: UIImageView?
     
-    private var viewData: PromptViewUIData
+    private var viewData: PromptViewUIData?
     
-    init(frame: CGRect, data: PromptViewUIData) {
-        self.viewData = data
+    override init(frame: CGRect) {
         super.init(frame: frame)
     }
     
     required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+        super.init(coder: aDecoder)
+    }
+    
+    func updateViewWith(data: PromptViewUIData) {
+        
+    }
+    
+    func addTapToReload() {
+        
     }
 }

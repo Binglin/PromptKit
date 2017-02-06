@@ -20,7 +20,9 @@ class BeansLoadingView: UIView {
         super.init(frame: frame)
         
         let dotWidth:CGFloat = 3
-        let path = UIBezierPath(ovalInRect: CGRectMake(0, 0, dotWidth, dotWidth)).CGPath
+
+        //0, 0, dotWidth, dotWidth
+        let path = UIBezierPath(ovalIn: CGRect(x: 0, y: 0, width: dotWidth, height: dotWidth)).cgPath
         dot1.path = path
         dot2.path = path
         dot3.path = path
@@ -30,9 +32,9 @@ class BeansLoadingView: UIView {
         textLabel.sizeToFit()
         self.addSubview(textLabel)
 
-        dot1.frame = CGRectMake(textLabel.frame.maxX + 3 , textLabel.frame.maxY - dotWidth, dotWidth, dotWidth)
-        dot2.frame = CGRectMake(dot1.frame.maxX + 3 , textLabel.frame.maxY - dotWidth, dotWidth, dotWidth)
-        dot3.frame = CGRectMake(dot2.frame.maxX + 3 , textLabel.frame.maxY - dotWidth, dotWidth, dotWidth)
+        dot1.frame = CGRect(x: textLabel.frame.maxX + 3 , y: textLabel.frame.maxY - dotWidth, width: dotWidth, height: dotWidth)
+        dot2.frame = CGRect(x: dot1.frame.maxX + 3 , y: textLabel.frame.maxY - dotWidth, width: dotWidth, height: dotWidth)
+        dot3.frame = CGRect(x: dot2.frame.maxX + 3 , y: textLabel.frame.maxY - dotWidth, width: dotWidth, height: dotWidth)
         
         self.layer.addSublayer(dot1)
         self.layer.addSublayer(dot2)
@@ -56,21 +58,21 @@ class BeansLoadingView: UIView {
         keyframe1.values   = [maxY, minY,maxY,maxY,maxY, maxY]
         keyframe1.repeatCount = Float(UInt.max)
         
-        dot1.addAnimation(keyframe1, forKey: "bean1")
+        dot1.add(keyframe1, forKey: "bean1")
         
         let keyframe2 = CAKeyframeAnimation(keyPath: "transform.translation.y")
         keyframe2.duration = 1
         keyframe2.keyTimes = keyframe1.keyTimes
         keyframe2.values   = [maxY, maxY, minY,maxY,maxY, maxY]
         keyframe2.repeatCount = Float(UInt.max)
-        dot2.addAnimation(keyframe2, forKey: "bean2")
+        dot2.add(keyframe2, forKey: "bean2")
         
         let keyframe3 = CAKeyframeAnimation(keyPath: "transform.translation.y")
         keyframe3.duration = 1
         keyframe3.keyTimes = keyframe1.keyTimes
         keyframe3.values   = [maxY, maxY, maxY, minY,maxY, maxY]
         keyframe3.repeatCount = Float(UInt.max)
-        dot3.addAnimation(keyframe3, forKey: "bean3")
+        dot3.add(keyframe3, forKey: "bean3")
         
     }
 }
