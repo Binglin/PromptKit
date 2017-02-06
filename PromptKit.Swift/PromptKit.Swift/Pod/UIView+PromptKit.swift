@@ -27,7 +27,8 @@ extension EmptyViewProtocol where Self: UIScrollView {
         
         self.hideEmpty()
         
-        let view = PKPromptView(frame: self.bounds)!
+        let view = PKPromptView(frame: CGRect(origin: .zero, size: self.bounds.size))!
+        
         let ocData = PKPromptUIDataSource(title: data.title, logo: data.iconName)
         ocData?.btnTitle = data.buttonTitle
         ocData?.detailTitle = data.detailTitle
@@ -53,7 +54,7 @@ extension LoadingViewProtocol where Self: UIView {
         
         guard let beans = loading else{
             
-            let loading = BeansLoadingView(frame: self.bounds)
+            let loading = BeansLoadingView(frame: CGRect(origin: .zero, size: self.bounds.size))
             loading.tag = PromptViewStyle.loading.rawValue
             self.addSubview(loading)
             
@@ -77,7 +78,7 @@ extension ErrorViewProtocol where Self: UIView {
         
         self.hideError()
         
-        let view = PKPromptView(frame: self.bounds)!
+        let view = PKPromptView(frame: CGRect(origin: .zero, size: self.bounds.size))!
         let ocData = PKPromptUIDataSource(title: data.title, logo: data.iconName)
         ocData?.btnTitle = data.buttonTitle
         ocData?.detailTitle = data.detailTitle

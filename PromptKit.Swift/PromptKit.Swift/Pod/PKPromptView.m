@@ -76,15 +76,13 @@
     UIFont *font   = titleTextAttribute[NSFontAttributeName];
     UIColor *color = titleTextAttribute[NSForegroundColorAttributeName];
     
-    if (font == nil) {
-        font = [UIFont systemFontOfSize:14.0];
+    if (font) {
+        _titleLabel.font = font;
     }
     
-    if (color == nil) {
-        color = [UIColor colorWithRed:(0x80) / 255.0 green:(0x7d)/255.0 blue:(0x6c)/255.0 alpha:1.0];
+    if (color) {
+        _titleLabel.textColor = color;
     }
-    _titleLabel.font = font;
-    _titleLabel.textColor = color;
 }
 
 - (void)setDetailTextAttribute:(NSDictionary<NSString *,id> *)attribute{
@@ -97,17 +95,13 @@
     UIFont *font   = detailTextAttribute[NSFontAttributeName];
     UIColor *color = detailTextAttribute[NSForegroundColorAttributeName];
     
-    if (font == nil) {
-        font = [UIFont systemFontOfSize:14.0];
+    if (font) {
+        _detailLabel.font = font;
     }
     
-    if (color == nil) {
-        color = [UIColor lightGrayColor];
+    if (color) {
+        _detailLabel.textColor = color;
     }
-    
-    _detailLabel.font = font;
-    _detailLabel.textColor = color;
-
 }
 
 
@@ -209,6 +203,8 @@
         _titleLabel = [UILabel new];
         _titleLabel.numberOfLines = 0;
         _titleLabel.textAlignment = NSTextAlignmentCenter;
+        _titleLabel.font =  [UIFont systemFontOfSize:14.0];
+        _titleLabel.textColor = [UIColor colorWithRed:(0x80) / 255.0 green:(0x7d)/255.0 blue:(0x6c)/255.0 alpha:1.0];
     }
     return _titleLabel;
 }
@@ -218,6 +214,8 @@
         _detailLabel = [UILabel new];
         _detailLabel.numberOfLines = 0;
         _detailLabel.textAlignment = NSTextAlignmentCenter;
+        _detailLabel.font =  [UIFont systemFontOfSize:14.0];
+        _detailLabel.textColor = [UIColor lightGrayColor];
     }
     return _detailLabel;
 }
