@@ -27,18 +27,14 @@ extension EmptyViewProtocol where Self: UIScrollView {
         
         self.hideEmpty()
         
-        let view = PKPromptView(frame: CGRect(origin: .zero, size: self.bounds.size))!
-        
-        let ocData = PKPromptUIDataSource(title: data.title, logo: data.iconName)
-        ocData?.btnTitle = data.buttonTitle
-        ocData?.detailTitle = data.detailTitle
-        view.update(withEntity: ocData)
+        let view = PromptView(frame: CGRect(origin: .zero, size: self.bounds.size))
+        view.updateViewWith(data: data)
         view.tag = PromptViewStyle.empty.rawValue
         self.addSubview(view)
     }
     
     func hideEmpty() {
-        let emptyView = self.viewWithTag(PromptViewStyle.empty.rawValue) as? PKPromptView
+        let emptyView = self.viewWithTag(PromptViewStyle.empty.rawValue) as? PromptView
         emptyView?.removeFromSuperview()
     }
 }
@@ -78,19 +74,14 @@ extension ErrorViewProtocol where Self: UIView {
         
         self.hideError()
         
-        let view = PKPromptView(frame: CGRect(origin: .zero, size: self.bounds.size))!
-        let ocData = PKPromptUIDataSource(title: data.title, logo: data.iconName)
-        ocData?.btnTitle = data.buttonTitle
-        ocData?.detailTitle = data.detailTitle
-        ocData?.reloadExecution = data.buttonAction
-        view.update(withEntity: ocData)
-        
+        let view = PromptView(frame: CGRect(origin: .zero, size: self.bounds.size))
+        view.updateViewWith(data: data)
         view.tag = PromptViewStyle.error.rawValue
         self.addSubview(view)
     }
     
     func hideError() {
-        let errorView = self.viewWithTag(PromptViewStyle.empty.rawValue) as? PKPromptView
+        let errorView = self.viewWithTag(PromptViewStyle.empty.rawValue) as? PromptView
         errorView?.removeFromSuperview()
     }
 }
@@ -124,7 +115,7 @@ extension ErrorToastProtocol where Self: UIView {
     }
     
     func showToast(data: PromptViewUIData) {
-        self.showToast(text: data.title)
+        self.showToast(text: data.title!)
     }
     
     func hideToast() {

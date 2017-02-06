@@ -4,27 +4,20 @@
 
   },
   "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
-    "FAFEF355647C0046669203118865F1E425458C80" : 9223372036854775807,
     "EECFBCBE662E66563E5A35551F81A2D580DC566E" : 0,
-    "D754D0DA92C6AF91EB3BD4531502D9D6FBB1831A" : 0
+    "FAFEF355647C0046669203118865F1E425458C80" : 9223372036854775807
   },
   "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "CB4B26C3-410D-4E9B-A440-9F819A39220C",
   "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
-    "FAFEF355647C0046669203118865F1E425458C80" : "..",
     "EECFBCBE662E66563E5A35551F81A2D580DC566E" : "PromptKit\/",
-    "D754D0DA92C6AF91EB3BD4531502D9D6FBB1831A" : ""
+    "FAFEF355647C0046669203118865F1E425458C80" : ".."
   },
   "DVTSourceControlWorkspaceBlueprintNameKey" : "PromptKit",
   "DVTSourceControlWorkspaceBlueprintVersion" : 204,
-  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "PromptKitOCRac\/PromptKit.xcworkspace",
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "PromptKit.xcworkspace",
   "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
     {
-      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "ssh:\/\/bitbucket.org\/binglin\/cuber.git",
-      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
-      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "D754D0DA92C6AF91EB3BD4531502D9D6FBB1831A"
-    },
-    {
-      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "github.com:Binglin\/PromptKit.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/Binglin\/PromptKit.git",
       "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
       "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "EECFBCBE662E66563E5A35551F81A2D580DC566E"
     },

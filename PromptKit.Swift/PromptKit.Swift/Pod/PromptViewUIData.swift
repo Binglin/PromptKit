@@ -18,7 +18,7 @@ enum PromptViewStyle: Int {
 
 struct PromptViewUIData {
     
-    var title: String = ""
+    var title: String?
     var detailTitle: String? = nil
     
     var iconName: String? = nil

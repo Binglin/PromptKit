@@ -24,10 +24,12 @@
 @property (nonatomic, strong) UIButton      *actionBtn;
 
 
+- (void)setTitleTextAttribute: (NSDictionary<NSString *, id> *)attribute UI_APPEARANCE_SELECTOR;
+- (void)setDetailTextAttribute: (NSDictionary<NSString *, id> *)attribute UI_APPEARANCE_SELECTOR; 
+ 
+ 
 - (void)updateViewWithEntity:(PKPromptUIDataSource *)entity;
 
 - (void)addTapToReload;
 
 @end
-
-

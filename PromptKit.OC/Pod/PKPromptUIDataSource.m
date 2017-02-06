@@ -7,22 +7,40 @@
 //
 
 #import "PKPromptUIDataSource.h"
-#import "PKSetting.h"
+
+static  NSString * const PKDefaultEmptyTitle = @"空空如也";
+static  NSString * const PKDefaultEmptyLogo  = @"pk_global_empty_icon";
+
+static  NSString * const PKDefaultErrorTitle = @"请求失败";
+static  NSString * const PKDefaultErrorLogo  = @"pk_global_error_icon";
+
+
+
+
 
 @implementation PKPromptUIDataSource
 
 + (instancetype)defaultEmptyEntity{
-    return [PKSetting Default].empty;
+    
+    PKPromptUIDataSource *empty = [PKPromptUIDataSource new];
+    empty.title     = PKDefaultEmptyTitle;
+    empty.iconName  = PKDefaultEmptyLogo;
+
+    return empty;
 }
 
 + (instancetype)defaultErrorEntity{
-    return [PKSetting Default].error;
+    
+    PKPromptUIDataSource *error = [PKPromptUIDataSource new];
+    error.title     = PKDefaultErrorTitle;
+    error.iconName  = PKDefaultErrorLogo;
+    return error;
 }
 
 - (instancetype)initWithEmptyTitle:(NSString *)title{
     if (self = [super init]) {
         self.title = title;
-        self.iconName = [PKSetting Default].empty.iconName;
+        self.iconName = PKDefaultEmptyLogo;
     }
     return self;
 }
@@ -30,7 +48,7 @@
 - (instancetype)initWithErrorTitle:(NSString *)title{
     if (self = [super init]) {
         self.title = title;
-        self.iconName = [PKSetting Default].error.iconName;
+        self.iconName = PKDefaultErrorLogo;
     }
     return self;
 }

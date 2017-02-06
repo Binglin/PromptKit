@@ -7,7 +7,6 @@
 //
 
 #import "PKPromptView.h"
-#import "PKSetting.h"
 
 @interface PKPromptView ()
 
@@ -61,32 +60,41 @@
         [_actionBtn removeFromSuperview];
     }
     
-    [self setupUIStyle];
     [self setNeedsLayout];
 }
 
-- (void)setupUIStyle{
+- (void)setTitleTextAttribute:(NSDictionary<NSString *,id> *)attribute{
+   
+    if (_titleLabel == nil) {
+        return;
+    }
+    UIFont *font   = attribute[NSFontAttributeName];
+    UIColor *color = attribute[NSForegroundColorAttributeName];
     
-    UILabel  *defaultTitle  = [PKSetting Default].style.titleLabel;
-    UILabel  *defaultDetail = [PKSetting Default].style.detailLabel;
-    UIButton *defaultButton = [PKSetting Default].style.actionBtn;
+    if (font) {
+        _titleLabel.font = font;
+    }
     
-    _titleLabel.font        = defaultTitle.font;
-    _titleLabel.textColor   = defaultTitle.textColor;
+    if (color) {
+        _titleLabel.textColor = color;
+    }
+}
+
+- (void)setDetailTextAttribute:(NSDictionary<NSString *,id> *)attribute{
     
-    _detailLabel.font       = defaultDetail.font;
-    _detailLabel.textColor  = defaultDetail.textColor;
+    if (_detailLabel == nil) {
+        return;
+    }
+    UIFont *font   = attribute[NSFontAttributeName];
+    UIColor *color = attribute[NSForegroundColorAttributeName];
     
-    _actionBtn.titleLabel.font = defaultButton.titleLabel.font;
+    if (font) {
+        _detailLabel.font = font;
+    }
     
-    [_actionBtn setTitleColor:[defaultButton titleColorForState:UIControlStateNormal] forState:UIControlStateNormal];
-    [_actionBtn setTitleColor:[defaultButton titleColorForState:UIControlStateHighlighted] forState:UIControlStateHighlighted];
-    
-    [_actionBtn setBackgroundImage:[defaultButton backgroundImageForState:UIControlStateNormal] forState:UIControlStateNormal];
-    [_actionBtn setBackgroundImage:[defaultButton backgroundImageForState:UIControlStateHighlighted] forState:UIControlStateHighlighted];
-    
-    [_actionBtn setImage:[defaultButton imageForState:UIControlStateNormal] forState:UIControlStateNormal];
-    [_actionBtn setImage:[defaultButton imageForState:UIControlStateHighlighted] forState:UIControlStateHighlighted];
+    if (color) {
+        _detailLabel.textColor = color;
+    }
 }
 
 
@@ -188,6 +196,8 @@
         _titleLabel = [UILabel new];
         _titleLabel.numberOfLines = 0;
         _titleLabel.textAlignment = NSTextAlignmentCenter;
+        _titleLabel.font =  [UIFont systemFontOfSize:14.0];
+        _titleLabel.textColor = [UIColor colorWithRed:(0x80) / 255.0 green:(0x7d)/255.0 blue:(0x6c)/255.0 alpha:1.0];
     }
     return _titleLabel;
 }
@@ -197,6 +207,8 @@
         _detailLabel = [UILabel new];
         _detailLabel.numberOfLines = 0;
         _detailLabel.textAlignment = NSTextAlignmentCenter;
+        _detailLabel.font =  [UIFont systemFontOfSize:14.0];
+        _detailLabel.textColor = [UIColor lightGrayColor];
     }
     return _detailLabel;
 }
@@ -204,6 +216,8 @@
 - (UIButton *)actionBtn{
     if (!_actionBtn) {
         _actionBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+        [_actionBtn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+        [_actionBtn setTitleColor:[[UIColor blackColor] colorWithAlphaComponent:0.6] forState:UIControlStateHighlighted];
     }
     return _actionBtn;
 }
