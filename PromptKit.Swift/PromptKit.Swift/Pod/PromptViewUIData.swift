@@ -19,12 +19,21 @@ enum PromptViewStyle: Int {
 struct PromptViewUIData {
     
     var title: String?
-    var detailTitle: String? = nil
+    var detailTitle: String?
     
-    var iconName: String? = nil
+    var iconName: String?
     
-    var buttonTitle: String? = nil
-    var buttonAction: (() -> Void)? = nil
+    var buttonTitle: String?
+    var buttonAction: (() -> Void)?
+    
+    init(title: String? = nil, detailTitle: String? = nil, iconName: String? = nil,
+         buttonTitle: String? = nil, buttonAction: (() -> Void)? = nil) {
+        self.title          = title
+        self.detailTitle    = detailTitle
+        self.iconName       = iconName
+        self.buttonTitle    = buttonTitle
+        self.buttonAction   = buttonAction
+    }
 }
 
 

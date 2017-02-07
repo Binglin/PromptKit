@@ -34,7 +34,7 @@ extension Signal {
         }
     }
     
-    func manage(empty del: EmptyViewProtocol, data: PromptViewUIData) {
+    func manage(empty del: EmptyViewProtocol, data: PromptViewUIData = PromptViewUIData.Default.empty) {
         del.hideEmpty()
         
         self.observeFailed { _ in
