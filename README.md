@@ -5,7 +5,8 @@ show Loading、error、empty with RACSignal
 
 # appearance
 ### global appearance
-- set `PKPromtView`background color
+
+ - set `PKPromtView`background color
 
  ```
  [[PKPromptView appearance] setBackgroundColor:[UIColor lightGrayColor]];
@@ -13,17 +14,23 @@ show Loading、error、empty with RACSignal
  - set global empty title 、 empty icon
 
  ```
- PKSetting *pkDefault     = [PKSetting Default];
- pkDefault.empty.title    = @"oops, there is nothing";
- pkDefault.empty.iconName = @"global_empty_logo";
+ PKPromptUIDataSource *empty = [PKPromptUIDataSource new];
+ empty.title = @"empty tint text";
+ empty.iconName = @"empty_logo";
+
+ [PKPromptUIDataSource setDefaultEmptyEntity:empty];
+
  ```
 
  - set global error title、error icon
 
  ```
- pkDefault.error.title    = @"something wrong";
- pkDefault.error.iconName = @"global_error_logo";
- pkDefault.error.btnTitle = @"tap to refresh";
+ PKPromptUIDataSource *error = [PKPromptUIDataSource new];
+ error.title    = @"something wrong";
+ error.iconName = @"global_error_logo";
+ error.btnTitle = @"tap to refresh";
+
+ [PKPromptUIDataSource setDefaultErrorEntity:error];
  ```
 
  - set action button style
