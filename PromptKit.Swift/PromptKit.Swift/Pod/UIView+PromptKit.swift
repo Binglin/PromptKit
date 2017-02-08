@@ -18,7 +18,7 @@ extension UIView: LoadingViewProtocol { }
 
 extension UIView: ErrorViewProtocol { }
 
-
+extension UIView: MBLoadingProtocol { }
 
 // MARK: - UIScrollView
 extension EmptyViewProtocol where Self: UIScrollView {
@@ -52,6 +52,7 @@ extension LoadingViewProtocol where Self: UIView {
             
             let loading = BeansLoadingView(frame: CGRect(origin: .zero, size: self.bounds.size))
             loading.tag = PromptViewStyle.loading.rawValue
+            loading.startAnimating()
             self.addSubview(loading)
             
             return
@@ -62,6 +63,31 @@ extension LoadingViewProtocol where Self: UIView {
     func hideLoading() {
         let loading = self.viewWithTag(PromptViewStyle.loading.rawValue) as? BeansLoadingView
         loading?.removeFromSuperview()
+    }
+}
+
+
+// MARK: - MBProgressHUD
+extension MBLoadingProtocol where Self: UIView {
+    
+    func showMBLoading(text: String?) {
+        var hud = MBProgressHUD(for: self)
+        if let hud = hud {
+            self.addSubview(hud)
+        }else {
+            
+            //if self.next is UIViewController { }
+            hud = MBProgressHUD.showAdded(to: self, animated: true)
+        }
+        hud?.mode = .indeterminate
+        hud?.label.text = text
+        hud?.removeFromSuperViewOnHide = true
+        hud?.show(animated: true)
+    }
+    
+    func hideMBLoading(){
+        let hud = MBProgressHUD(for: self)
+        hud?.hide(animated: true)
     }
 }
 
@@ -81,7 +107,7 @@ extension ErrorViewProtocol where Self: UIView {
     }
     
     func hideError() {
-        let errorView = self.viewWithTag(PromptViewStyle.empty.rawValue) as? PromptView
+        let errorView = self.viewWithTag(PromptViewStyle.error.rawValue) as? PromptView
         errorView?.removeFromSuperview()
     }
 }

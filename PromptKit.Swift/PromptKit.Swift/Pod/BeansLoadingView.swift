@@ -30,6 +30,12 @@ class BeansLoadingView: UIView {
         textLabel.text = "Loading"
         
         textLabel.sizeToFit()
+        
+        let size = textLabel.frame.size
+        
+        textLabel.frame = CGRect(origin: CGPoint(x: (frame.size.width - size.width - 6 * dotWidth) / 2.0,
+                                                      y: (frame.size.height - size.height) / 2.0),
+                                 size: size)
         self.addSubview(textLabel)
 
         dot1.frame = CGRect(x: textLabel.frame.maxX + 3 , y: textLabel.frame.maxY - dotWidth, width: dotWidth, height: dotWidth)
@@ -39,6 +45,7 @@ class BeansLoadingView: UIView {
         self.layer.addSublayer(dot1)
         self.layer.addSublayer(dot2)
         self.layer.addSublayer(dot3)
+        
     }
     
     required init?(coder aDecoder: NSCoder) {

@@ -14,6 +14,11 @@ protocol LoadingViewProtocol {
     func hideLoading()
 }
 
+protocol MBLoadingProtocol {
+    func showMBLoading(text: String?)
+    func hideMBLoading()
+}
+
 protocol EmptyViewProtocol {
     func showEmpty(data: PromptViewUIData)
     func hideEmpty()

@@ -22,6 +22,11 @@ class PromptView: UIView {
     
     fileprivate var viewData: PromptViewUIData!
     
+    //UI_APPEARANCE
+    dynamic var imageTitlePadding: CGFloat = 12
+    dynamic var titleDetailPadding: CGFloat = 6
+    dynamic var detailButtonPadding: CGFloat = 6
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         addSubview(centerContainer)
@@ -36,43 +41,48 @@ class PromptView: UIView {
         
         var containerHeight: CGFloat = 0.0
         let minEdge: CGFloat = 15
-        let verticalPadding: CGFloat = 10
         
         let maxWidth = self.frame.width - 2 * minEdge
         
         // img
         if let img = imageView {
             img.sizeToFit()
+            img.center = CGPoint(x: self.frame.width / 2.0, y: img.frame.height/2.0)
             containerHeight = img.frame.height
         }
         
         // title
         if let title = titleLabel {
-            containerHeight += verticalPadding
+            if let _ = imageView {
+                containerHeight += imageTitlePadding
+            }
             let size = title.sizeThatFits(CGSize(width: maxWidth, height:  100.0))
             title.frame = CGRect(origin: CGPoint(x: minEdge, y: containerHeight),
                                  size: CGSize(width: maxWidth, height: size.height))
+            containerHeight += size.height
         }
         
         // detail
         if let detail = detailLabel {
-            containerHeight += verticalPadding
+            containerHeight += titleDetailPadding
             let size = detail.sizeThatFits(CGSize(width: maxWidth, height:  100.0))
             detail.frame = CGRect(origin: CGPoint(x: minEdge, y: containerHeight),
                                   size: CGSize(width: maxWidth, height: size.height))
+            containerHeight += size.height
         }
         
         // btn
         if let actionBtn = actionButton {
-            containerHeight += verticalPadding * 2
+            containerHeight += detailButtonPadding
             let size = CGSize(width: self.frame.size.width - 35 * 2, height: 44)
             actionBtn.frame = CGRect(origin: CGPoint(x: 35, y: containerHeight), size: size)
+            actionBtn.titleLabel?.font = UIFont.systemFont(ofSize: 15)
             containerHeight += size.height
         }
         
         // center container
-        centerContainer.frame = CGRect(origin: CGPoint(x: minEdge, y: (self.frame.height - containerHeight)/2.0),
-                                       size: CGSize(width: maxWidth, height: containerHeight))
+        centerContainer.frame = CGRect(origin: CGPoint(x: 0, y: (self.frame.height - containerHeight)/2.0),
+                                       size: CGSize(width: self.frame.width, height: containerHeight))
     }
 }
 
@@ -129,7 +139,7 @@ extension PromptView {
             }
             actionButton?.removeFromSuperview()
         }
-        
+
     }
     
     func addTapToReload() {

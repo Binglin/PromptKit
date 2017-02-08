@@ -13,9 +13,9 @@ protocol PKListCounter {
     func hasRows() -> Bool
 }
 
-extension UITableView: PKListCounter {
+extension UITableView {
     
-    func hasRows() -> Bool {
+    override func hasRows() -> Bool {
         for i in 0..<self.numberOfSections {
             if self.numberOfRows(inSection: i) > 0 {
                 return true
@@ -25,13 +25,23 @@ extension UITableView: PKListCounter {
     }
 }
 
-extension UICollectionView: PKListCounter {
+extension UICollectionView {
     
-    func hasRows() -> Bool {
+    override func hasRows() -> Bool {
         for i in 0..<self.numberOfSections {
             if self.numberOfItems(inSection: i) > 0 {
                 return true
             }
+        }
+        return false
+    }
+}
+
+extension UIView: PKListCounter {
+    func hasRows() -> Bool {
+        
+        for v in self.subviews {
+            if v.hasRows() { return true }
         }
         return false
     }

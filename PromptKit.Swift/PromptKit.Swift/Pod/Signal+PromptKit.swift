@@ -25,6 +25,9 @@ extension SignalProducer {
     }
 }
 
+
+
+// MARK: - loading
 extension Signal {
     
     func manage(loading del: LoadingViewProtocol) {
@@ -34,6 +37,21 @@ extension Signal {
         }
     }
     
+    func manage(mbLoading del: MBLoadingProtocol, text: String? = nil) {
+  
+        del.showMBLoading(text: text)
+        self.observeResult { _ in
+            del.hideMBLoading()
+        }
+    }
+    
+}
+
+
+
+// MARK: - empty
+extension Signal {
+
     func manage(empty del: EmptyViewProtocol, data: PromptViewUIData = PromptViewUIData.Default.empty) {
         del.hideEmpty()
         
@@ -56,23 +74,38 @@ extension Signal {
         }
     }
     
-    func manage(error del: ErrorViewProtocol, buttonTitle: String? = nil, reload: (() -> Void)? = nil) {
+}
+
+
+
+// MARK: - error | toast
+extension Signal {
+    
+    func manage(error del: ErrorViewProtocol, buttonTitle: String? = nil, reload: (() -> Void)?) {
+
+        var defaultData = PromptViewUIData.Default.error
+        defaultData.buttonTitle = buttonTitle
+        defaultData.buttonAction = reload
+        self.manage(error: del, data: defaultData)
+
+    }
+    
+    func manage(error del: ErrorViewProtocol,  data: PromptViewUIData = PromptViewUIData.Default.empty) {
         
         del.hideError()
         
         self.observeFailed { err in
+            
+            var uiData = data
+            
+            uiData.title = err.localizedDescription
             
             var listHasData = false
             
             if let del = del as? PKListCounter {
                 listHasData = del.hasRows()
             }
-            let uiData = PromptViewUIData(title: err.localizedDescription,
-                                          detailTitle: nil,
-                                          iconName: nil,
-                                          buttonTitle: buttonTitle,
-                                          buttonAction: reload)
-            
+           
             guard listHasData else {
                 del.showError(data: uiData)
                 return
@@ -93,6 +126,7 @@ extension Signal {
             del.showToast(text: err.localizedDescription)
         }
     }
+
 }
 
 
