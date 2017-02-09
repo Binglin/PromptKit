@@ -10,8 +10,6 @@ import UIKit
 import ReactiveSwift
 import MJRefresh
 
-extension UIScrollView: UIRefreshProtocol {}
-
 public struct ListAction : OptionSet {
     
     public let rawValue: Int
@@ -26,29 +24,39 @@ public struct ListAction : OptionSet {
 
 
 protocol UIPullPushDataProtocol {
-    func load(more: Bool)
-}
-
-
-protocol UIRefreshProtocol {
-    func add(_ p: ListAction, del: UIPullPushDataProtocol)
-    func beginRefreshing()
-    func endRefreshing(more: Bool)
-    func updateFooterWith(moreData: Bool)
+    func loadData(action: ListAction)
 }
 
 
 extension Signal {
     
-    func manageRefreshing(_ p: UIRefreshProtocol, more: Bool = false) {
+    func manageRefreshing(_ scrollView: UIScrollView, action: ListAction = .refreshing) {
         
         self.signal.observeResult { _ in
-            p.endRefreshing(more: more)
+            
+            DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + .milliseconds(10), execute: {
+                scrollView.endRefreshing(action: action)
+            })
+        }
+    }
+    
+    func manageRefreshing(_ scrollView: UIScrollView, action: ListAction = .refreshing, hasMore: @escaping () -> Bool) {
+        
+        self.observeResult { (r) in
+            
+            scrollView.endRefreshing(action: action)
+            
+            if case .success(_) = r {
+                DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + .milliseconds(530), execute: {
+                    scrollView.updateFooterWith(moreData: hasMore())
+                })
+                
+            }
         }
     }
 }
 
-extension UIRefreshProtocol where Self: UIScrollView {
+extension UIScrollView {
     
     func add(_ p: ListAction = .refreshing, del: UIPullPushDataProtocol){
         
@@ -60,10 +68,10 @@ extension UIRefreshProtocol where Self: UIScrollView {
         }
     }
     
-    func addRefreshHeader(del: UIPullPushDataProtocol) {
+    private func addRefreshHeader(del: UIPullPushDataProtocol) {
         
         let header = MJRefreshNormalHeader { _ in
-            del.load(more: false)
+            del.loadData(action: .refreshing)
         }
         header?.lastUpdatedTimeLabel.textColor = UIColor.gray
         header?.stateLabel.textColor = UIColor.gray
@@ -74,31 +82,33 @@ extension UIRefreshProtocol where Self: UIScrollView {
     
     private func addLoadMore(del: UIPullPushDataProtocol) {
         let footer = MJRefreshBackNormalFooter { 
-            del.load(more: true)
+            del.loadData(action: .loadMore)
         }
+        footer?.isAutomaticallyHidden = true
         footer?.setTitle("没有更多了", for: .noMoreData)
         footer?.stateLabel.textColor = UIColor.gray
         self.mj_footer = footer
-        self.mj_footer.isHidden = true
     }
     
     func beginRefreshing() {
         self.mj_header.beginRefreshing()
     }
     
-    func endRefreshing(more: Bool) {
-        if more {
-            self.mj_footer.endRefreshing()
+    func endRefreshing(action: ListAction) {
+        
+        if action == .refreshing {
+            self.mj_header?.endRefreshing()
         }else{
-            self.mj_header.endRefreshing()
+            self.mj_footer?.endRefreshing()
         }
     }
     
     func updateFooterWith(moreData: Bool) {
+        
         if moreData {
-            self.mj_footer.resetNoMoreData()
+            self.mj_footer?.resetNoMoreData()
         }else{
-            self.mj_footer.endRefreshingWithNoMoreData()
+            self.mj_footer?.endRefreshingWithNoMoreData()
         }
     }
 }
