@@ -27,7 +27,22 @@ extension EmptyViewProtocol where Self: UIScrollView {
         
         self.hideEmpty()
         
-        let view = PromptView(frame: CGRect(origin: .zero, size: self.bounds.size))
+        var frame = CGRect(origin: .zero, size: self.bounds.size)
+        
+        if let table = self as? UITableView {
+            if let header = table.tableHeaderView {
+                let headerHeight = header.frame.height
+                frame.origin.y = headerHeight
+                frame.size.height -= headerHeight
+            }
+            
+            if let headerHeight = table.delegate?.tableView?(table, heightForHeaderInSection: 0){
+                frame.origin.y += headerHeight
+                frame.size.height -= headerHeight
+            }
+        }
+        
+        let view = PromptView(frame: frame)
         view.updateViewWith(data: data)
         view.tag = PromptViewStyle.empty.rawValue
         self.addSubview(view)
@@ -80,14 +95,15 @@ extension MBLoadingProtocol where Self: UIView {
             hud = MBProgressHUD.showAdded(to: self, animated: true)
         }
         hud?.mode = .indeterminate
-        hud?.label.text = text
+        hud?.labelText = text
         hud?.removeFromSuperViewOnHide = true
-        hud?.show(animated: true)
+        hud?.show(true)
     }
     
     func hideMBLoading(){
         let hud = MBProgressHUD(for: self)
-        hud?.hide(animated: true)
+        
+        hud?.hide(true)
     }
 }
 
@@ -126,16 +142,16 @@ extension ErrorToastProtocol where Self: UIView {
         }else{
             hud = MBProgressHUD.showAdded(to: self, animated: true)
         }
-        hud?.detailsLabel.text = text
+        hud?.detailsLabelText = text
         hud?.mode = .text
         
         
         DispatchQueue.main.asyncAfter(deadline: .now() + DispatchTimeInterval.milliseconds(10)) {
-            hud?.show(animated: true)
+            hud?.show(true)
         }
         
         DispatchQueue.main.asyncAfter(deadline: .now() + DispatchTimeInterval.seconds(2), execute: {
-            hud?.hide(animated: true)
+            hud?.hide(true)
         })
         
     }
@@ -145,7 +161,7 @@ extension ErrorToastProtocol where Self: UIView {
     }
     
     func hideToast() {
-        MBProgressHUD(for: self)?.hide(animated: true)
+        MBProgressHUD(for: self)?.hide(true)
     }
 }
 

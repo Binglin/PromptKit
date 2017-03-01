@@ -20,6 +20,10 @@ public struct ListAction : OptionSet {
     
     public static var refreshing = ListAction(rawValue: 1 << 1)
     public static var loadMore   = ListAction(rawValue: 1 << 2)
+    
+    func isLoadMore() -> Bool {
+        return self == .loadMore
+    }
 }
 
 
@@ -29,10 +33,11 @@ protocol UIPullPushDataProtocol {
 
 
 extension Signal {
+
     
     func manageRefreshing(_ scrollView: UIScrollView, action: ListAction = .refreshing) {
         
-        self.signal.observeResult { _ in
+        self.observeResult { _ in
             
             DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + .milliseconds(10), execute: {
                 scrollView.endRefreshing(action: action)
@@ -51,6 +56,19 @@ extension Signal {
                     scrollView.updateFooterWith(moreData: hasMore())
                 })
                 
+            }
+        }
+    }
+    
+    func manage<Paged: PagedListDataProvider>(refreshing scrollView: UIScrollView, action: ListAction, pageDel: Paged) {
+        
+        self.observeResult { (r) in
+            scrollView.endRefreshing(action: action)
+            
+            if case .success(_) = r {
+                DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + .milliseconds(530), execute: {
+                    scrollView.updateFooterWith(moreData: pageDel.hasMore)
+                })
             }
         }
     }
