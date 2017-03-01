@@ -54,24 +54,44 @@ extension Signal {
 
     func manage(empty del: EmptyViewProtocol, data: PromptViewUIData = PromptViewUIData.Default.empty) {
         del.hideEmpty()
-        
-        self.observeFailed { _ in
-            del.hideEmpty()
-        }
-        self.observeCompleted {
-            // todo 计算数量
-            var morethan1 = false
-            
-            if let del = del as? PKListCounter{
-                morethan1 = del.hasRows()
-            }
-            
-            if morethan1 {
+        self.observe { (e) in
+            switch e {
+            case .completed:
+                // todo 计算数量
+                var morethan1 = false
+                
+                if let del = del as? PKListCounter{
+                    morethan1 = del.hasRows()
+                }
+                
+                if morethan1 {
+                    del.hideEmpty()
+                }else{
+                    del.showEmpty(data: data)
+                }
+            case .failed(_):
                 del.hideEmpty()
-            }else{
-                del.showEmpty(data: data)
+            case .value(_): break
+            case .interrupted: break
             }
         }
+//        self.observeFailed { _ in
+//            del.hideEmpty()
+//        }
+//        self.observeCompleted {
+//            // todo 计算数量
+//            var morethan1 = false
+//            
+//            if let del = del as? PKListCounter{
+//                morethan1 = del.hasRows()
+//            }
+//            
+//            if morethan1 {
+//                del.hideEmpty()
+//            }else{
+//                del.showEmpty(data: data)
+//            }
+//        }
     }
     
 }
