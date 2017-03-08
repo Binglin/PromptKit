@@ -126,6 +126,7 @@ extension ErrorToastProtocol where Self: UIView {
         }else{
             hud = MBProgressHUD.showAdded(to: self, animated: true)
         }
+        
         hud?.detailsLabel.text = text
         hud?.mode = .text
         
@@ -134,7 +135,7 @@ extension ErrorToastProtocol where Self: UIView {
             hud?.show(animated: true)
         }
         
-        DispatchQueue.main.asyncAfter(deadline: .now() + DispatchTimeInterval.seconds(2), execute: {
+        DispatchQueue.main.asyncAfter(deadline: .now() + DispatchTimeInterval.seconds(1), execute: {
             hud?.hide(animated: true)
         })
         
